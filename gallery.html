@@ -1,0 +1,7 @@
+<div class="container">
+  <img ng-src="{{image}}" 
+       ng-repeat="image in images" 
+       class="gallery-image fade-animation"
+       ng-click="openInNewWindow($index)"
+       ng-show="nowShowing==$index">
+</div>

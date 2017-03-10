@@ -1,0 +1,105 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "angular-route@1.5.11",
+        "scope": null,
+        "escapedName": "angular-route",
+        "name": "angular-route",
+        "rawSpec": "1.5.11",
+        "spec": "1.5.11",
+        "type": "version"
+      },
+      "C:\\Users\\Alessio\\Desktop\\Repositories\\TW-EasyRash\\assets"
+    ]
+  ],
+  "_from": "angular-route@1.5.11",
+  "_id": "angular-route@1.5.11",
+  "_inCache": true,
+  "_location": "/angular-route",
+  "_nodeVersion": "6.9.4",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/angular-route-1.5.11.tgz_1484264810543_0.8425143149215728"
+  },
+  "_npmUser": {
+    "name": "angularcore",
+    "email": "angular-core+npm@google.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "angular-route@1.5.11",
+    "scope": null,
+    "escapedName": "angular-route",
+    "name": "angular-route",
+    "rawSpec": "1.5.11",
+    "spec": "1.5.11",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-route/-/angular-route-1.5.11.tgz",
+  "_shasum": "49614f3a167f54291e449fe8ba05d39c58924b83",
+  "_shrinkwrap": null,
+  "_spec": "angular-route@1.5.11",
+  "_where": "C:\\Users\\Alessio\\Desktop\\Repositories\\TW-EasyRash\\assets",
+  "author": {
+    "name": "Angular Core Team",
+    "email": "angular-core+npm@google.com"
+  },
+  "bugs": {
+    "url": "https://github.com/angular/angular.js/issues"
+  },
+  "dependencies": {},
+  "description": "AngularJS router module",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "49614f3a167f54291e449fe8ba05d39c58924b83",
+    "tarball": "https://registry.npmjs.org/angular-route/-/angular-route-1.5.11.tgz"
+  },
+  "gitHead": "cdb9db456ece8b3f80a638bb7bd69dc2dcd4eee9",
+  "homepage": "http://angularjs.org",
+  "jspm": {
+    "shim": {
+      "angular-route": {
+        "deps": [
+          "angular"
+        ]
+      }
+    }
+  },
+  "keywords": [
+    "angular",
+    "framework",
+    "browser",
+    "router",
+    "client-side"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "angularcore",
+      "email": "angular-core+npm@google.com"
+    },
+    {
+      "name": "petebd",
+      "email": "pete@bacondarwin.com"
+    }
+  ],
+  "name": "angular-route",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/angular.js.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.5.11"
+}
