@@ -6,6 +6,7 @@
 
 	include 'config.php';
 
+
 	// Create connection
 	$con = mysqli_connect($servername, $username, $password, $dbname);
 	
@@ -18,7 +19,13 @@
 	if ($sth){
 		$rows = array();
 		while($r = mysqli_fetch_assoc($sth)) {
-		if (strlen($r['data']) == 0){ unset($r['data']); }
+			if (strlen($r['data']) == 0){ unset($r['data']); }
+			if (strlen($r['screenshots']) == 0){ unset($r['screenshots']); }else{
+				$screenshots = explode(";",$r['screenshots']);
+				unset($r['screenshots']);
+				$r['screenshots'] = $screenshots;
+			}
+			if (strlen($r['long_description']) == 0){ unset($r['long_description']); }
 			$rows[] = $r;
 		}
 		echo Spyc::YAMLDump($rows,4,0);
