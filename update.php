@@ -1,5 +1,6 @@
 <?php
 
+	// Getting POST data, performing some security checks
 	$postdata = file_get_contents("php://input");
 	$request = json_decode($postdata);
 	$email = $request->user;
@@ -8,9 +9,6 @@
 	$pass = $request->password;
 	$password2 = addslashes($request->password);
 	if ($pass != $password2) die("Invalid password");
-	
-	include 'config.php';
-
 	$name = $request->name;
 	$name2 = addslashes($request->name);
 	if ($name != $name2) die("Invalid name");
@@ -44,27 +42,31 @@
 	$description = addslashes($request->description);
 	$long_description = addslashes($request->long_description);
 	
-	// Create connection
+	// Creating connection
+	include 'config.php';
 	$con = mysqli_connect($servername, $username, $password, $dbname);
 	
-	// Check connection
+	// Checking connection
 	if (mysqli_connect_errno()){
 		die("Connection failed: " . mysqli_connect_error());
 	}
 	
-	$sth = mysqli_query($con,"SELECT * FROM vitadb_users WHERE email='$email' AND password='$pass'");
-	if ($sth){
-		if (mysqli_num_rows($sth)>0){
-			$sth2 = mysqli_query($con,"UPDATE vitadb SET name='$name', icon='$icon', version='$version', author='$author', url='$url', type='$type', description='$description', data='$url3', date='$day', titleid='$tid', long_description='$long_description' WHERE id=$id");
-			if ($sth2){
-				echo "ok - type: " . $type;
-			} else {
-				echo("An error occurred: " . mysqli_error($con));
-			}
-		}
-	} else {
+	$sth = mysqli_prepare($con,"SELECT email FROM vitadb_users WHERE email=? AND password=?");
+	mysqli_stmt_bind_param($sth, "ss", $email, $pass);
+	mysqli_stmt_execute($sth);
+	$data = mysqli_stmt_get_result($sth);
+	
+	if (mysqli_num_rows($data)>0){
+		mysqli_stmt_close($sth);
+		$sth2 = mysqli_prepare($con,"UPDATE vitadb SET name=?,icon=?,version=?,author=?,url=?,type=?,description=?,data=?,date=?,titleid=?,long_description=? WHERE id=?");
+		mysqli_stmt_bind_param($sth2, "ssssisssi", $name, $version, $author, $url, $type, $description, $day, $long_description, $id);
+		mysqli_stmt_execute($sth2);
+		mysqli_stmt_close($sth2);
+	} else {		
+		mysqli_stmt_close($sth);
 		echo("An error occurred: " . mysqli_error($con));
 	}
 
 	mysqli_close($con);
+	
 ?>

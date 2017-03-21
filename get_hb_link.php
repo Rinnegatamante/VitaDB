@@ -1,39 +1,27 @@
 <?php
-	/*$email = $request->user;
-	$email2 = addslashes($request->user);
-	if ($email != $email2) die("Invalid email");
-	$pass = $request->password;
-	$password2 = addslashes($request->password);
-	if ($pass != $password2) die("Invalid password");*/
+	
+	// Getting ID and performing some security checks
 	$id = $_GET['id'];
 	$id2 = addslashes($id);
 	if ($id != $id2) die("Invalid id");	
 
-	// Create connection
+	// Creating connection
 	include 'config.php';
 	$con = mysqli_connect($servername, $username, $password, $dbname);
 	
-	// Check connection
+	// Checking connection
 	if (mysqli_connect_errno()){
-		die("Connection failed: " . mysqli_connect_error());
+		die("Connection failed: " .  mysqli_connect_error());
 	} 
 	
-	//$sth = mysqli_query($con,"SELECT * FROM vitadb_users WHERE email='$email' AND password='$pass'");
-	//if ($sth){
-		$sth = mysqli_query($con,"SELECT * FROM vitadb WHERE id = '$id'");
-		if ($sth){
-			$rows = array();
-			while($r = mysqli_fetch_assoc($sth)) {
-				$rows[] = $r;
-			}
-			$dls = $rows[0]['downloads'] + 1;
-			$sth2 = mysqli_query($con,"UPDATE vitadb SET downloads='$dls' WHERE id=$id");
-		} else {
-			echo("An error occurred: " . mysqli_error($con));
-		}
-	//} else {
-	//	echo("An error occurred: " . mysqli_error($con));
-	//}
+	$sth = mysqli_prepare($con,"SELECT id,url,downloads FROM vitadb WHERE id=?");
+	mysqli_stmt_bind_param($sth, "i", $id);
+	mysqli_stmt_execute($sth);
+	mysqli_stmt_bind_result($sth, $id, $url, $downloads);
+	mysqli_stmt_fetch($sth);
+	mysqli_stmt_close($sth);
+	$downloads=$downloads+1;
+	mysqli_query($con,"UPDATE vitadb SET downloads='$downloads' WHERE id='$id'");
 	mysqli_close($con);
-	header("location: " . $rows[0]['url']);
+	header("location: " . $url);
 ?>

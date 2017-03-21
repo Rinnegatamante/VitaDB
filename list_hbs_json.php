@@ -1,17 +1,13 @@
 <?php
-	$postdata = file_get_contents("php://input");
-	$request = json_decode($postdata);
 
+	// Creating connection
 	include 'config.php';
-
-	// Create connection
 	$con = mysqli_connect($servername, $username, $password, $dbname);
 	
-	// Check connection
+	// Checking connection
 	if (mysqli_connect_errno()){
 		die("Connection failed: " . mysqli_connect_error());
 	} 
-	
 	
 	$sth = mysqli_query($con,"SELECT * FROM vitadb WHERE type < 8 ORDER BY date DESC");
 	if ($sth){

@@ -1,5 +1,6 @@
 <?php
-
+	
+	// Fetching data, performing some security checks
 	$postdata = file_get_contents("php://input");
 	$request = json_decode($postdata);
 	$email = $request->email;
@@ -9,28 +10,24 @@
 	$password2 = addslashes($request->password);
 	if ($pass != $password2) die("Invalid password");
 	$pass = hash("sha256",$request->password);
-	
-	include 'config.php';
 
-	// Create connection
+	// Creating connection
+	include 'config.php';
 	$con = mysqli_connect($servername, $username, $password, $dbname);
 	
-	// Check connection
+	// Checking connection
 	if (mysqli_connect_errno()){
 		die("Connection failed: " . mysqli_connect_error());
 	} 
 	
-	
-	$sth = mysqli_query($con,"SELECT * FROM vitadb_users WHERE email='$email' AND password='$pass'");
-	if ($sth){
-		$rows = array();
-		while($r = mysqli_fetch_assoc($sth)) {
-			$rows[] = $r;
-		}
-		echo json_encode($rows);
-	} else {
-		echo("An error occurred: " . mysqli_error($con));
+	$sth = mysqli_prepare($con,"SELECT email,password FROM vitadb_users WHERE email=? AND password=?");
+	mysqli_stmt_bind_param($sth, "ss", $email, $pass);
+	mysqli_stmt_execute($sth);
+	$data = mysqli_stmt_get_result($sth);
+	while($r = mysqli_fetch_assoc($data)) {
+		$rows[] = $r;
 	}
-
+	echo json_encode($rows);
+	mysqli_stmt_close($sth);
 	mysqli_close($con);
 ?>

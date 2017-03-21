@@ -1,29 +1,30 @@
 <input style="width: 0px;height: 0px;" type="text" id="email" name="email" />
 <input style="width: 0px;height: 0px;" type="text" id="pass" name="pass" />
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-$id = $_POST['email'];
-$pass = $_POST['pass'];
-$id2 = addslashes($id);
-if ($id != $id2) die("Invalid email");
-$pass2 = addslashes($pass);
-if ($pass != $pass2) die("Invalid password");
 
-include 'config.php';
+	// Grabbing POST data, performing some security checks
+	$id = $_POST['email'];
+	$pass = $_POST['pass'];
+	$id2 = addslashes($id);
+	if ($id != $id2) die("Invalid email");
+	$pass2 = addslashes($pass);
+	if ($pass != $pass2) die("Invalid password");
 
-// Create connection
-$con = mysqli_connect($servername, $username, $password, $dbname);
+	// Creating connection
+	include 'config.php';
+	$con = mysqli_connect($servername, $username, $password, $dbname);
 	
-// Check connection
-if (mysqli_connect_errno()){
-	die("Connection failed: " . mysqli_connect_error());
-}
+	// Checking connection
+	if (mysqli_connect_errno()){
+		die("Connection failed: " . mysqli_connect_error());
+	}
 	
-$sth = mysqli_query($con,"SELECT * FROM vitadb_users WHERE email='$id' AND password='$pass'");
-if ($sth){
-	if (mysqli_num_rows($sth)>0){
+	$sth = mysqli_prepare($con,"SELECT * FROM vitadb_users WHERE email=? AND password=?");
+	mysqli_stmt_bind_param($sth, "ss", $id, $pass);
+	mysqli_stmt_execute($sth);
+	$data = mysqli_stmt_get_result($sth);
+	
+	if (mysqli_num_rows($data)>0){
 
 		$uploaddir = '/customers/8/5/0/rinnegatamante.it/httpd.www/vitadb/icons/';
 		$fname = hash("sha256",rand() . basename($_FILES['icon']['name']) . rand() . rand());
@@ -42,7 +43,8 @@ if ($sth){
 
 		echo "</pre>";
 	}
-}
-mysqli_close($con);
+	
+	mysqli_stmt_close($sth);
+	mysqli_close($con);
 
 ?>
