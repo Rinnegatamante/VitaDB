@@ -84,6 +84,12 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
 		.when('/info/:hid', {
 			templateUrl: 'home/info.template.php'
 		})
-
+		.when('/staff', {
+			templateUrl: 'home/staff.template.php'
+		})
+		.when('/instructions', {
+			templateUrl: 'home/instructions.template.php'
+		})
+		
 		$httpProvider.interceptors.push('HttpInterceptorMessage')
 }])
