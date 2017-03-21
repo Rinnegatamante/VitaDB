@@ -17,8 +17,15 @@
 	if ($sth){
 		$rows = array();
 		while($r = mysqli_fetch_assoc($sth)) {
+			
+			// Downloads counter support
+			$masked_link = "https://vitadb.rinnegatamante.it/get_hb_link.php?id=" . $r['id'];
+			unset($r['url']);
+			$r['url'] = $masked_link;
+			
 			$rows[] = $r;
 		}
+		
 		echo json_encode($rows, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 	} else {
 		echo("An error occurred: " . mysqli_error($con));

@@ -1,18 +1,16 @@
 <?php
-	$postdata = file_get_contents("php://input");
-	$request = json_decode($postdata);
 	/*$email = $request->user;
 	$email2 = addslashes($request->user);
 	if ($email != $email2) die("Invalid email");
 	$pass = $request->password;
 	$password2 = addslashes($request->password);
 	if ($pass != $password2) die("Invalid password");*/
-	$id = $request->hid;
-	$id2 = addslashes($request->hid);
-	if ($id != $id2) die("Invalid id");
-	include 'config.php';
+	$id = $_GET['id'];
+	$id2 = addslashes($id);
+	if ($id != $id2) die("Invalid id");	
 
 	// Create connection
+	include 'config.php';
 	$con = mysqli_connect($servername, $username, $password, $dbname);
 	
 	// Check connection
@@ -26,15 +24,10 @@
 		if ($sth){
 			$rows = array();
 			while($r = mysqli_fetch_assoc($sth)) {
-				
-				// Downloads counter support
-				$masked_link = "https://vitadb.rinnegatamante.it/get_hb_link.php?id=" . $r['id'];
-				unset($r['url']);
-				$r['url'] = $masked_link;
-				
 				$rows[] = $r;
 			}
-			echo json_encode($rows, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+			$dls = $rows[0]['downloads'] + 1;
+			$sth2 = mysqli_query($con,"UPDATE vitadb SET downloads='$dls' WHERE id=$id");
 		} else {
 			echo("An error occurred: " . mysqli_error($con));
 		}
@@ -42,4 +35,5 @@
 	//	echo("An error occurred: " . mysqli_error($con));
 	//}
 	mysqli_close($con);
+	header("location: " . $rows[0]['url']);
 ?>

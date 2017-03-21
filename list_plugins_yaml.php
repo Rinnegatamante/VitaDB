@@ -28,6 +28,12 @@
 				$r['screenshots'] = $screenshots;
 			}
 			if (strlen($r['long_description']) == 0){ unset($r['long_description']); }
+			
+			// Downloads counter support
+			$masked_link = "https://vitadb.rinnegatamante.it/get_hb_link.php?id=" . $r['id'];
+			unset($r['url']);
+			$r['url'] = $masked_link;
+			
 			$rows[] = $r;
 		}
 		echo Spyc::YAMLDump($rows,4,60);
