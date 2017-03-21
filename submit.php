@@ -36,8 +36,8 @@
 	$tid = $request->titleid;
 	$tid2 = addslashes($request->titleid);
 	if ($tid != $tid2) die("Invalid title ID");
-	$description = addslashes($request->description);
-	$long_description = addslashes($request->long_description);
+	$description = $request->description;
+	$long_description = $request->long_description;
 	
 	// Creating connection
 	include 'config.php';

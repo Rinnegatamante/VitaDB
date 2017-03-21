@@ -39,8 +39,8 @@
 	$id = $request->id;
 	$id2 = addslashes($request->id);
 	if ($id != $id2) die("Invalid ID");
-	$description = addslashes($request->description);
-	$long_description = addslashes($request->long_description);
+	$description = $request->description;
+	$long_description = $request->long_description;
 	
 	// Creating connection
 	include 'config.php';
@@ -59,7 +59,7 @@
 	if (mysqli_num_rows($data)>0){
 		mysqli_stmt_close($sth);
 		$sth2 = mysqli_prepare($con,"UPDATE vitadb SET name=?,icon=?,version=?,author=?,url=?,type=?,description=?,data=?,date=?,titleid=?,long_description=? WHERE id=?");
-		mysqli_stmt_bind_param($sth2, "ssssisssi", $name, $version, $author, $url, $type, $description, $day, $long_description, $id);
+		mysqli_stmt_bind_param($sth2, "sssssisssssi", $name, $icon, $version, $author, $url, $type, $description, $url3, $day, $tid, $long_description, $id);
 		mysqli_stmt_execute($sth2);
 		mysqli_stmt_close($sth2);
 	} else {		

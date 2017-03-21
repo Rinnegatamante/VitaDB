@@ -25,8 +25,8 @@
 	$day2 = addslashes($request->date);
 	if ($day != $day2) die("Invalid date");
 	$type = 8;
-	$description = addslashes($request->description);
-	$long_description = addslashes($request->long_description);
+	$description = $request->description;
+	$long_description = $request->long_description;
 	
 	// Creating connection
 	include 'config.php';
