@@ -13,22 +13,8 @@
 		<link rel="stylesheet" type="text/css" href="js/dependencies/tooltipster-master/dist/css/tooltipster.bundle.min.css" />
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 		<link href="css/style.css" rel="stylesheet">
+		<link href="css/vitadb.css" rel="stylesheet">
 		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
-		<style type="text/css">
-			#bot-part{
-				color: #30a5ff;
-				position: fixed;
-				bottom: 0;
-				left: 10px;
-				overflow: hidden;
-			}
-			#bot-part2{
-				color: #30a5ff;
-				position: fixed;
-				bottom: 20px;
-				left: 10px;
-			}
-		</style>
 		<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
 		<script src="js/respond.min.js"></script>
@@ -52,6 +38,8 @@
 		<script src="home/home2.controller.js"></script>
 		<script src="home/api.controller.js"></script>
 		<script src="home/info.controller.js"></script>
+		<script src="home/staff.controller.js"></script>
+		<script src="home/instructions.controller.js"></script>
 		<script src="login/login.controller.js"></script>
 		<script src="login/logout.controller.js"></script>
 		<script src="submit/submit.controller.js"></script>

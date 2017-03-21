@@ -9,16 +9,16 @@
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-offset-4 col-lg-4">
+		<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-offset-1 col-lg-10">
 			<select style="display:inline-block;vertical-align:middle;" ng-change="changeView()" ng-model="cat_filter" required="true" class="form-control">
 				<option value=0>JSON</option>
 				<option value=1>YAML</option>
 			</select>
 		</div>
 	</div>
-	
-	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-offset-4 col-lg-4">
-		<div class="login-panel panel panel-default">
+	<br>
+	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-offset-1 col-lg-10">
+		<div class="panel panel-default">
 			<div class="panel-heading">Developer Api</div>
 			<div class="panel-body">
 				<form role="form" ng-submit="submit()">
