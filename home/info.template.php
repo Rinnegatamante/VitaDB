@@ -3,7 +3,8 @@
 		<br>
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<a href="" onclick="history.go(-1);"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> &nbsp;
+				<a href="#/" ng-if="conf.type < 8"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> &nbsp;
+				<a href="#/plugins" ng-if="conf.type == 8"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> &nbsp;
 				<img ng-if="conf.type < 8" src="http://rinnegatamante.it/vitadb/icons/{{conf.icon}}" style="height: 100%;" /> {{conf.name}} {{conf.version}}
 			</div>
 			<div class="panel-body">
