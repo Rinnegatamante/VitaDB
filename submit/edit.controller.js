@@ -8,8 +8,9 @@ app.controller('editController',function($scope, $rootScope, $http, $location, $
 		password: $rootScope.user.password
 	}
 	
-	$http.post('get_hb_json.php', data).then(function(res){
+	$http.post('get_hb_unmasked_json.php', data).then(function(res){
 		$scope.conf = res.data[0]
+		$scope.conf.type = "" + res.data[0].type
 	})
 	
 	// submit function
@@ -24,7 +25,7 @@ app.controller('editController',function($scope, $rootScope, $http, $location, $
 		}else{
 			$http.post('update2.php', $scope.conf).then(function(res){
 				alertify.success($scope.conf.name + " edited successfully!");
-				$location.path('/')
+				$location.path('/plugins')
 			})
 		}
 	}

@@ -21,7 +21,7 @@
 							<input type="text" ng-model="conf.description" class="form-control" placeholder="Homebrew Short Description" required="true" />
 						</div>
 						<div class="form-group">
-							<textarea ng-model="conf.long_description" class="form-control" placeholder="Homebrew Long Description (Optional)" />
+							<textarea ng-model="conf.long_description" class="form-control" placeholder="Homebrew Long Description (Optional)"></textarea>
 						</div>
 						<div class="form-group" ng-if="conf.type < 8">
 							<input type="text" ng-model="conf.icon" class="form-control" placeholder="Homebrew Icon Name" required="true" />
