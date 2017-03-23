@@ -42,52 +42,10 @@
 		<script src="home/instructions.controller.js"></script>
 		<script src="login/login.controller.js"></script>
 		<script src="login/logout.controller.js"></script>
+		<script src="login/register.controller.js"></script>
 		<script src="submit/submit.controller.js"></script>
 		<script src="submit/submit2.controller.js"></script>
 		<script src="submit/edit.controller.js"></script>
-		<script type="text/javascript">
-			var listTicker = function(options) {
-				var defaults = {
-					list: [],
-					startIndex:0,
-					interval: 3 * 1000,
-				}   
-				var options = $.extend(defaults, options);
-       
-				var listTickerInner = function(index) {
-
-					if (options.list.length == 0) return;
-
-					if (!index || index < 0 || index > options.list.length) index = 0;
-
-					var value= options.list[index];
-
-					options.trickerPanel.fadeOut(function() {
-						$(this).html(value).fadeIn();
-					});
-        
-					var nextIndex = (index + 1) % options.list.length;
-
-					setTimeout(function() {
-						listTickerInner(nextIndex);
-					}, options.interval);
-
-				};
-    
-				listTickerInner(options.startIndex);
-			}
-    
-			var textlist = new Array("<b>Rinnegatamante</b>: Creator & Maintainer", "<b>gnmmarechal</b>: Database Moderator");
-
-			$(function() {
-					listTicker({
-					list: textlist ,
-					startIndex:0,
-					trickerPanel: $('#credits'),
-					interval: 3 * 1000,
-				});
-			});
-		</script>
 	</head>
 	<body>
 		<input type='hidden' name='_csrf' value='<%= _csrf %>'>
@@ -107,7 +65,7 @@
 								<svg class="glyph stroked male-user">
 									<use xlink:href="#stroked-male-user"></use>
 								</svg>
-								{{user.email}}<span class="caret"></span>
+								{{user.name}}<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">
 								<li ng-if="user">
@@ -153,19 +111,25 @@
 						Developer Api
 					</a>
 				</li>
-				<li ng-if="user">
+				<li>
+					<a href="#/staff">
+						<i class="fa fa-users" aria-hidden="true"></i> &nbsp;
+						Staff List
+					</a>
+				</li>
+				<li role="presentation" class="divider"></li>
+				<li ng-if="user && user.role < 3">
 					<a href="#/submit">
 						<i class="fa fa-plus" aria-hidden="true"></i> &nbsp;
 						Submit a new homebrew
 					</a>
 				</li>
-				<li ng-if="user">
+				<li ng-if="user  && user.role < 3">
 					<a href="#/submit2">
 						<i class="fa fa-plus" aria-hidden="true"></i> &nbsp;
 						Submit a new plugin
 					</a>
 				</li>
-				<li role="presentation" class="divider"></li>
 				<li ng-if="user">
 					<a href="#logout">
 						<svg class="glyph stroked cancel">
@@ -181,6 +145,12 @@
 						</svg>
 						Login
 					</a>
+					<a href="#register">
+						<svg class="glyph stroked pencil">
+							<use xlink:href="#stroked-pencil"/></use>
+						</svg>
+						Register
+					</a>
 				</li>
 			</ul>
 			<div id="bot-part2">
@@ -191,9 +161,6 @@
 						<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
 					</center>
 				</form>
-			</div>
-			<div id="bot-part">
-				<h6 style="color: #30a5ff; overflow: hidden;" id='credits'></h6>
 			</div>
 		</div>
 		<div ng-view class="slide page"></div>

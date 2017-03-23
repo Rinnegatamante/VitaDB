@@ -5,7 +5,8 @@ app.run(function ($http, $rootScope, $location){
 		$rootScope.user = {}
 		$rootScope.user.email = localStorage.getItem('id');
 		$rootScope.user.password = localStorage.getItem('token');
-		console.log('ok')
+		$rootScope.user.name = localStorage.getItem('name');
+		$rootScope.user.role = localStorage.getItem('role');
 	}
 })
 app.factory('HttpInterceptorMessage', ['$q', '$location', '$rootScope', function ($q, $location, $rootScope) {
@@ -61,6 +62,9 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
 		})
 		.when('/login', {
 			templateUrl: 'login/login.template.php'
+		})
+		.when('/register', {
+			templateUrl: 'login/register.template.php'
 		})
 		.when('/logout', {
 			templateUrl: 'login/logout.template.php'

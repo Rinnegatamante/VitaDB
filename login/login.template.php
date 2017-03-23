@@ -18,6 +18,9 @@
 						</div>
 						<input type="submit" value="Login" class="btn btn-primary" />
 					</fieldset>
+					<div class="pull-right">
+						<a href="#/register">Don't have an account? Register now!</a>
+					</div>
 				</form>
 			</div>
 		</div>
