@@ -20,11 +20,14 @@
 		die("Connection failed: " . mysqli_connect_error());
 	} 
 	
-	$sth = mysqli_prepare($con,"SELECT email,password FROM vitadb_users WHERE email=? AND password=?");
+	$sth = mysqli_prepare($con,"SELECT email,password,name,roles FROM vitadb_users WHERE email=? AND password=?");
 	mysqli_stmt_bind_param($sth, "ss", $email, $pass);
 	mysqli_stmt_execute($sth);
 	$data = mysqli_stmt_get_result($sth);
 	while($r = mysqli_fetch_assoc($data)) {
+		$roles = explode(";",$r['roles']);
+		unset($r['roles']);
+		$r['role'] = $roles[0];
 		$rows[] = $r;
 	}
 	echo json_encode($rows);

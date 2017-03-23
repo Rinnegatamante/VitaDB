@@ -45,7 +45,7 @@
 						&nbsp;
 						<a ng-if="brew.data.length > 0" href="{{brew.data}}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Data Files</a>
 						&nbsp;
-						<a ng-if="user" href="#/edit/{{brew.id}}"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+						<a ng-if="user && user.role < 5" href="#/edit/{{brew.id}}"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
 					</div>
 					<div class="topcorner"><h6 style="text-align: right;">{{brew.genre}} &nbsp;<br>{{brew.date}} &nbsp;<br>{{brew.downloads}} DLs&nbsp;</h6></div>
 				</div>

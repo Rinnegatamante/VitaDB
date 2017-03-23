@@ -51,17 +51,22 @@
 		die("Connection failed: " . mysqli_connect_error());
 	}
 	
-	$sth = mysqli_prepare($con,"SELECT email FROM vitadb_users WHERE email=? AND password=?");
+	$sth = mysqli_prepare($con,"SELECT roles FROM vitadb_users WHERE email=? AND password=?");
 	mysqli_stmt_bind_param($sth, "ss", $email, $pass);
 	mysqli_stmt_execute($sth);
 	$data = mysqli_stmt_get_result($sth);
 	
 	if (mysqli_num_rows($data)>0){
+		while($r = mysqli_fetch_assoc($data)) {
+			$roles = explode(";",$r['roles']);	
+		}
 		mysqli_stmt_close($sth);
-		$sth2 = mysqli_prepare($con,"UPDATE vitadb SET name=?,icon=?,version=?,author=?,url=?,type=?,description=?,data=?,date=?,titleid=?,long_description=? WHERE id=?");
-		mysqli_stmt_bind_param($sth2, "sssssisssssi", $name, $icon, $version, $author, $url, $type, $description, $url3, $day, $tid, $long_description, $id);
-		mysqli_stmt_execute($sth2);
-		mysqli_stmt_close($sth2);
+		if ((strcmp($roles[0],"1") == 0) or (strcmp($roles[0],"2") == 0) or (strcmp($roles[0],"3") == 0)){
+			$sth2 = mysqli_prepare($con,"UPDATE vitadb SET name=?,icon=?,version=?,author=?,url=?,type=?,description=?,data=?,date=?,titleid=?,long_description=? WHERE id=?");
+			mysqli_stmt_bind_param($sth2, "sssssisssssi", $name, $icon, $version, $author, $url, $type, $description, $url3, $day, $tid, $long_description, $id);
+			mysqli_stmt_execute($sth2);
+			mysqli_stmt_close($sth2);
+		}
 	} else {		
 		mysqli_stmt_close($sth);
 		echo("An error occurred: " . mysqli_error($con));

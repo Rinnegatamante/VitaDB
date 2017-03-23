@@ -26,7 +26,7 @@
 						&nbsp;
 						<a href="#/info/{{brew.id}}"><i class="fa fa-info" aria-hidden="true"></i> Show info</a>
 						&nbsp;
-						<a ng-if="user" href="#/edit/{{brew.id}}"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+						<a ng-if="user && user.role < 5" href="#/edit/{{brew.id}}"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
 					</div>
 					<div class="topcorner"><h6 style="text-align: right;">{{brew.date}} &nbsp;<br>{{brew.downloads}} DLs&nbsp;</h6></div>
 				</div>
