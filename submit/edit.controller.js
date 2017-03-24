@@ -1,6 +1,6 @@
 app.controller('editController',function($scope, $rootScope, $http, $location, $routeParams){
 	
-	if (typeof($rootScope) == 'undefined' || $rootScope.user == undefined) $location.path("/login");
+	if (typeof($rootScope) == 'undefined' || $rootScope.user == undefined || $rootScope.user.role > 3) $location.path("/");
 	$scope.conf = {}
 	var data = {
 		hid: $routeParams.hid,

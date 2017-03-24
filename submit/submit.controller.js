@@ -1,13 +1,12 @@
-// Controller for newconf template
 app.controller('submitController',function($scope, $rootScope, $http, $location){
 	$scope.conf = {}
 	$scope.conf.user = $rootScope.user.email
 	$scope.conf.password = $rootScope.user.password
 	$scope.conf.uploader = "sahcj.html"
 	$scope.conf.type = "1"
-	if (typeof($rootScope) == 'undefined' || $rootScope.user == undefined) $location.path("/login");
+	if (typeof($rootScope) == 'undefined' || $rootScope.user == undefined || $rootScope.user.role > 2) $location.path("/");
 	
-	// submit function, starts a new conference
+	// submit function
 	$scope.submit = function () {
 		$http.post('submit.php', $scope.conf).then(res => {
 			alertify.success($scope.conf.name + " added successfully!");

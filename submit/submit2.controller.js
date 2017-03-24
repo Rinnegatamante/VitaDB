@@ -1,9 +1,8 @@
-// Controller for newconf template
 app.controller('submit2Controller',function($scope, $rootScope, $http, $location){
 	$scope.conf = {}
-	if (typeof($rootScope) == 'undefined' || $rootScope.user == undefined) $location.path("/login");
+	if (typeof($rootScope) == 'undefined' || $rootScope.user == undefined || $rootScope.user.role > 2) $location.path("/");
 	
-	// submit function, starts a new conference
+	// submit function
 	$scope.submit = function () {
 		$scope.conf.user = $rootScope.user.email
 		$scope.conf.password = $rootScope.user.password
