@@ -46,6 +46,7 @@
 		<script src="submit/submit.controller.js"></script>
 		<script src="submit/submit2.controller.js"></script>
 		<script src="submit/edit.controller.js"></script>
+		<script src="user/info.controller.js"></script>
 	</head>
 	<body>
 		<input type='hidden' name='_csrf' value='<%= _csrf %>'>
@@ -61,7 +62,7 @@
 					<a class="navbar-brand" href="#/"><span>Vita</span>DB <span>BETA</span></a>
 					<ul class="user-menu">
 						<li class="dropdown pull-right">
-							<a class="dropdown-toggle" data-toggle="dropdown">
+							<a href="" class="dropdown-toggle" data-toggle="dropdown">
 								<svg class="glyph stroked male-user">
 									<use xlink:href="#stroked-male-user"></use>
 								</svg>

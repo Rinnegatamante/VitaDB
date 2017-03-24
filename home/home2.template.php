@@ -20,7 +20,7 @@
 				<div class="row no-padding">
 					<div class="col-md-12">
 						<h4 style="white-space: nowrap;overflow: hidden;"><a href="#/info/{{brew.id}}"><b>{{brew.name}} {{brew.version}}</b></a></h3>
-						<h6>{{brew.author}}</h6>
+						<h6><a href="#/user/{{brew.author}}">{{brew.author}}</a></h6>
 						<h5 style="white-space: nowrap;overflow: hidden;">{{brew.description}}</h5>
 						<a href="{{brew.url}}"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i> Download</a>
 						&nbsp;

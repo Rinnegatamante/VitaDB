@@ -8,7 +8,7 @@
 		</ol>
 		<ol class="breadcrumb" style="background-color: beige;">
 			<li>
-				<b>Note:</b> You can now download homebrews from VitaDB directly from your PSVITA by using <a href="http://vitadb.rinnegatamante.it/#/info/205">Vita Homebrew Browser</a> by <b>noname120</b>.
+				<b>Note:</b> You can now download homebrews from VitaDB directly from your PSVITA by using <a href="http://vitadb.rinnegatamante.it/#/info/205">Vita Homebrew Browser</a> by <a href="#/user/devnoname120">devnoname120</a>.
 			</li>
 		</ol>
 	</div>
@@ -39,7 +39,7 @@
 					</div>
 					<div class="col-md-8">
 						<h4 style="white-space: nowrap;overflow: hidden;"><a href="#/info/{{brew.id}}"><b>{{brew.name}} {{brew.version}}</b></a></h3>
-						<h6>{{brew.author}}</h6>
+						<h6><a href="#/user/{{brew.author}}">{{brew.author}}</a></h6>
 						<h5 style="white-space: nowrap;overflow: hidden;">{{brew.description}}</h5>
 						<a href="{{brew.url}}"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i> Download</a>
 						&nbsp;
