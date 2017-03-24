@@ -1,6 +1,7 @@
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" ng-controller="submit2Controller">
-	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-offset-4 col-lg-4">
-		<div class="register-panel panel panel-default">
+	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-offset-1 col-lg-10">
+		<br>
+		<div class="panel panel-default">
 			<div class="panel-heading">
 				<i class="fa fa-plus" aria-hidden="true"></i> &nbsp;
 				Submit a new plugin
@@ -21,7 +22,7 @@
 							<input type="text" ng-model="conf.description" class="form-control" placeholder="Plugin Short Description" required="true" />
 						</div>
 						<div class="form-group">
-							<textarea ng-model="conf.long_description" class="form-control" placeholder="Plugin Long Description (Optional)" />
+							<textarea style="resize: vertical;" ng-model="conf.long_description" class="form-control" placeholder="Plugin Long Description (Optional)" />
 						</div>
 						<div class="form-group">
 							<input type="text" ng-model="conf.url" class="form-control" placeholder="Download Url" required="true" />

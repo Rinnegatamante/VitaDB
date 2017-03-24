@@ -1,6 +1,7 @@
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" ng-controller="editController">
-	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-offset-4 col-lg-4">
-		<div class="register-panel panel panel-default">
+	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-offset-1 col-lg-10">
+		<br>
+		<div class="panel panel-default">
 			<div class="panel-heading">
 				<i class="fa fa-pencil" aria-hidden="true"></i> &nbsp;
 				Edit a content
@@ -21,7 +22,7 @@
 							<input type="text" ng-model="conf.description" class="form-control" placeholder="Homebrew Short Description" required="true" />
 						</div>
 						<div class="form-group">
-							<textarea ng-model="conf.long_description" class="form-control" placeholder="Homebrew Long Description (Optional)"></textarea>
+							<textarea style="resize: vertical;" ng-model="conf.long_description" class="form-control" placeholder="Homebrew Long Description (Optional)"></textarea>
 						</div>
 						<div class="form-group" ng-if="conf.type < 8">
 							<input type="text" ng-model="conf.icon" class="form-control" placeholder="Homebrew Icon Name" required="true" />
