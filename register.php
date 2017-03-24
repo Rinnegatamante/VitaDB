@@ -28,7 +28,7 @@
 		die("Connection failed: " . mysqli_connect_error());
 	} 
 	
-	$sth = mysqli_prepare($con,"SELECT email,name FROM vitadb_users WHERE email=? AND name=?");
+	$sth = mysqli_prepare($con,"SELECT email,name FROM vitadb_users WHERE email=? OR name=?");
 	mysqli_stmt_bind_param($sth, "ss", $email, $name);
 	mysqli_stmt_execute($sth);
 	$data = mysqli_stmt_get_result($sth);

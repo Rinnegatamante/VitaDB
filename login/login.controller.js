@@ -10,7 +10,7 @@ app.controller('loginController',function($rootScope, $scope, $http, $location){
 		
 		// Login request to the server
 		$http.post('login.php', data).then(res => {
-			if (res.data.length > 0){
+			if (res.data[0].name != null){
 				$rootScope.user = res.data[0]
 				alertify.success('Welcome, ' + $rootScope.user.name + '!')
 				
