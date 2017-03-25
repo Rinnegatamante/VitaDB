@@ -49,8 +49,8 @@
 								<option value=3>Interpreter</option>
 							</select>
 						</div>
-						<input type="text" id="email" style="width: 0px;height: 0px;" ng-model="conf.user" />
-						<input type="text" id="pass" style="width: 0px;height: 0px;" ng-model="conf.password" />
+						<input type="text" id="email" style="height:0;width:0;padding:0;border:none;" ng-model="conf.user" />
+						<input type="text" id="pass" style="height:0;width:0;padding:0;border:none;" ng-model="conf.password" />
 						<iframe scrolling="no" frameBorder="0" id="uploader" width="100%" height="80px" ng-src="{{conf.uploader}}" onload="document.getElementById('uploader').contentWindow.document.getElementById('email').value = document.getElementById('email').value;document.getElementById('uploader').contentWindow.document.getElementById('pass').value = document.getElementById('pass').value;document.getElementById('url').value = document.getElementById('uploader').contentWindow.document.getElementById('icon_url').innerHTML;"></iframe>
 						<iframe scrolling="no" frameBorder="0" id="uploader2" width="100%" height="80px" src="param.html" onload="document.getElementById('hb_title').value = document.getElementById('uploader2').contentWindow.document.getElementById('hb_title').innerHTML;document.getElementById('hb_titleid').value = document.getElementById('uploader2').contentWindow.document.getElementById('hb_titleid').innerHTML;"></iframe>
 						<br>

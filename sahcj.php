@@ -1,5 +1,5 @@
-<input style="width: 0px;height: 0px;" type="text" id="email" name="email" />
-<input style="width: 0px;height: 0px;" type="text" id="pass" name="pass" />
+<input style="height:0;width:0;padding:0;border:none;" type="text" id="email" name="email" />
+<input style="height:0;width:0;padding:0;border:none;" type="text" id="pass" name="pass" />
 <?php
 
 	// Grabbing POST data, performing some security checks
