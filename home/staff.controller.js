@@ -5,7 +5,7 @@ app.controller('staffController',function($scope, $http, $routeParams, $location
 		i = 0
 		while (i < res.data.length){
 			if (res.data[i].avatar.length < 4){
-				$scope.staff[i].avatar = "unknown.png"
+				$scope.staff[i].avatar = "unknown.jpg"
 			}
 			if (res.data[i].roles[0] == "1"){
 				$scope.staff[i].role = "Founder"

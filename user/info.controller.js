@@ -9,7 +9,7 @@ app.controller('infouserController',($scope, $rootScope, $http, $location, $rout
 		$scope.conf.name = $routeParams.uname
 		if (res.data[0].avatar == null){
 			$scope.conf = {
-				avatar: "unknown.png",
+				avatar: "unknown.jpg",
 				role: "Guest",
 				name: $routeParams.uname,
 				color: "black"
@@ -17,7 +17,7 @@ app.controller('infouserController',($scope, $rootScope, $http, $location, $rout
 			console.log("test")
 		}else{
 			if (res.data[0].avatar.length < 4){
-				$scope.conf.avatar = "unknown.png"
+				$scope.conf.avatar = "unknown.jpg"
 			}
 			if (res.data[0].roles[0] == "1"){
 				$scope.conf.role = "Founder"

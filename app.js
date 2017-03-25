@@ -97,6 +97,9 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
 		.when('/user/:uname', {
 			templateUrl: 'user/info.template.php'
 		})
+		.when('/profile', {
+			templateUrl: 'user/profile.template.php'
+		})
 		
 		$httpProvider.interceptors.push('HttpInterceptorMessage')
 }])

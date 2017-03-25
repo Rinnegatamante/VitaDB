@@ -47,6 +47,7 @@
 		<script src="submit/submit2.controller.js"></script>
 		<script src="submit/edit.controller.js"></script>
 		<script src="user/info.controller.js"></script>
+		<script src="user/profile.controller.js"></script>
 	</head>
 	<body>
 		<input type='hidden' name='_csrf' value='<%= _csrf %>'>
@@ -69,6 +70,14 @@
 								{{user.name}}<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">
+								<li ng-if="user">
+									<a href="#profile">
+										<svg class="glyph stroked male user ">
+											<use xlink:href="#stroked-male-user"/>
+										</svg>		
+										Profile
+									</a>
+								</li>
 								<li ng-if="user">
 									<a href="#logout">
 										<svg class="glyph stroked lock">
