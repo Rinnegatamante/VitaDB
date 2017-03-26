@@ -4,7 +4,7 @@
 		<div class="panel panel-widget ">
 			<div class="row no-padding">
 				<div class="col-md-4">
-					<center><img class="icon" src="http://rinnegatamante.it/vitadb/avatars/{{conf.avatar}}" style="max-width: 50%;" /></center> 
+					<center><img class="icon" src="https://rinnegatamante.it/vitadb/avatars/{{conf.avatar}}" style="max-width: 50%;" /></center> 
 				</div>
 				<div class="col-md-8">
 					<h4 style="white-space: nowrap;overflow: hidden;"><b>{{conf.name}}</b></h3>
