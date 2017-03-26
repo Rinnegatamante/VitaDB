@@ -21,8 +21,8 @@
 	$uploaddir = '/customers/8/5/0/rinnegatamante.it/httpd.www/vitadb/avatars/';
 	$decomponed_url = explode(".",$avatar);
 	if (strcmp($decomponed_url[count($decomponed_url)-2],"tmp") == 0){
-		if (file_exists($uploaddir . $name . ".png")) unlink($uploaddir . $name . ".png");
-		rename($uploaddir . $name . ".tmp.png",$uploaddir . $name . ".png");
+		if (file_exists($uploaddir . $name . ".png")) unlink($uploaddir . hash("sha256",$name) . ".png");
+		rename($uploaddir . hash("sha256",$name) . ".tmp.png",$uploaddir . hash("sha256",$name) . ".png");
 	}
 	
 	// Creating connection
@@ -46,7 +46,7 @@
 			$avatar = "";
 			mysqli_stmt_bind_param($sth2, "sssss", $avatar, $twitter, $github, $website, $name);
 		}else{
-			$avatar = $name . ".png";
+			$avatar = hash("sha256",$name) . ".png";
 			mysqli_stmt_bind_param($sth2, "sssss", $avatar, $twitter, $github, $website, $name);
 		}
 		mysqli_stmt_execute($sth2);

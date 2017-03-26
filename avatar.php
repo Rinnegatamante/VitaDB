@@ -27,7 +27,7 @@
 	if (mysqli_num_rows($data)>0){
 
 		$uploaddir = '/customers/8/5/0/rinnegatamante.it/httpd.www/vitadb/avatars/';
-		$uploadfile = $uploaddir . $id . ".tmp.png";
+		$uploadfile = $uploaddir . hash("sha256",$id) . ".tmp.png";
 
 		$info = getimagesize($_FILES['avatar']['tmp_name']);
 		if (strcmp($info[0],"240")!=0) die("Wrong size (" . $info[0] . "x" . $info[1] . ")");
@@ -36,7 +36,7 @@
 		echo '<pre>';
 		if(file_exists($uploadfile)) unlink($uploadfile);
 		if (move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadfile)) {
-			echo "<div id='icon_url'>" . $id . ".tmp.png?cb=" . rand() . "</div>";
+			echo "<div id='icon_url'>" . hash("sha256",$id) . ".tmp.png?cb=" . rand() . "</div>";
 		}else{
 			echo "An error occurred during the upload.";
 		}
