@@ -12,9 +12,9 @@ app.controller('profileController',($scope, $rootScope, $http, $location, $inter
 		$scope.conf.password = $rootScope.user.password
 		if (res.data[0].avatar == null){
 			$scope.conf = {
-				avatar: "unknown.png",
+				avatar: "unknown.jpg",
 				role: "Guest",
-				name: $routeParams.uname,
+				name: $rootScope.user.name,
 				color: "black"
 			}
 			console.log("test")
