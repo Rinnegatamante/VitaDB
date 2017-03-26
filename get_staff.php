@@ -15,6 +15,7 @@
 		while($r = mysqli_fetch_assoc($sth)) {
 			$roles = explode(";",$r['roles']);
 			unset($r['roles']);
+			unset($r['password']);
 			$r['roles'] = $roles;
 			$rows[] = $r;
 			
