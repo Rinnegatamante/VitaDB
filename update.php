@@ -51,6 +51,15 @@
 		die("Connection failed: " . mysqli_connect_error());
 	}
 	
+	// Checking CSRF token
+	include 'xsrf.php';
+	$xsrf = $_COOKIE['XSRF-TOKEN'];
+	$hdr_xsrf = $_SERVER['HTTP_X_XSRF_TOKEN'];
+	if ((strcmp($xsrf,$hdr_xsrf) != 0) or (!checkXSRF($con, $xsrf))){
+		mysqli_close($con);
+		die("Unauthorized access.");
+	}
+	
 	$sth = mysqli_prepare($con,"SELECT roles FROM vitadb_users WHERE email=? AND password=?");
 	mysqli_stmt_bind_param($sth, "ss", $email, $pass);
 	mysqli_stmt_execute($sth);
