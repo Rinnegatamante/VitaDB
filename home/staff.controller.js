@@ -4,6 +4,9 @@ app.controller('staffController',function($scope, $http, $routeParams, $location
 		$scope.staff = res.data
 		i = 0
 		while (i < res.data.length){
+			if (res.data[i].hidden_mail == 1){
+				$scope.staff[i].email = ""
+			}
 			if (res.data[i].avatar.length < 4){
 				$scope.staff[i].avatar = "unknown.jpg"
 			}

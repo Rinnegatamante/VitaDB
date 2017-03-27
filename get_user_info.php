@@ -16,13 +16,16 @@
 		die("Connection failed: " . mysqli_connect_error());
 	} 
 	
-	$sth = mysqli_prepare($con,"SELECT email,roles,avatar,twitter,website,github FROM vitadb_users WHERE name=?");
+	$sth = mysqli_prepare($con,"SELECT email,roles,avatar,twitter,website,github,hidden_mail FROM vitadb_users WHERE name=?");
 	mysqli_stmt_bind_param($sth, "s", $id);
 	mysqli_stmt_execute($sth);
 	$data = mysqli_stmt_get_result($sth);
 	
 	while($r = mysqli_fetch_assoc($data)) {
 		$roles = explode(";",$r['roles']);
+		if ($r['hidden_mail'] == 1){
+			unset($r['email']);
+		}		
 		unset($r['roles']);
 		$r['roles'] = $roles;
 		$rows[] = $r;	

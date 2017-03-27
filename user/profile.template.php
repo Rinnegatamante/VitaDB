@@ -19,6 +19,12 @@
 							<input type="email" ng-model="conf.email" class="form-control" disabled="true" required="true" placeholder="E-Mail" />
 						</div>
 						<div class="form-group">
+							<select ng-model="conf.hidden_mail" ng-change="setStatus()" id="hidden_mail" required="true" class="form-control">
+								<option value=0>Show email in your user page.</option>
+								<option value=1>Hide email in your user page.</option>
+							</select>
+						</div>
+						<div class="form-group">
 							<div class="roleplate" style="background-color: {{conf.color}}">{{conf.role}}</div>
 						</div>
 						<div class="form-group">

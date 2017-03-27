@@ -10,6 +10,8 @@ app.controller('profileController',($scope, $rootScope, $http, $location, $inter
 		$scope.conf = res.data[0]
 		$scope.conf.name = $rootScope.user.name
 		$scope.conf.password = $rootScope.user.password
+		$scope.conf.hidden_mail = "" + res.data[0].hidden_mail
+		if (res.data[0].hidden_mail == 1) $scope.conf.email = $rootScope.user.email // Populating mail with rootScope cause API will hide email
 		if (res.data[0].avatar == null){
 			$scope.conf = {
 				avatar: "unknown.jpg",

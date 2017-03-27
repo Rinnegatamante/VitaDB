@@ -7,6 +7,9 @@ app.controller('infouserController',($scope, $rootScope, $http, $location, $rout
 	$http.post('get_user_info.php', data).then(res => {
 		$scope.conf = res.data[0]
 		$scope.conf.name = $routeParams.uname
+		if (res.data[0].hidden_mail == 1){
+			$scope.conf.email = ""
+		}
 		if (res.data[0].avatar == null){
 			$scope.conf = {
 				avatar: "unknown.jpg",

@@ -9,14 +9,16 @@
 		die("Connection failed: " . mysqli_connect_error());
 	} 
 	
-	$sth = mysqli_query($con,"SELECT DISTINCT * FROM vitadb_users WHERE roles LIKE '%1%' OR roles LIKE '%2%' OR roles LIKE '%3%'");
+	$sth = mysqli_query($con,"SELECT DISTINCT name,email,twitter,roles,website,github,avatar,hidden_mail FROM vitadb_users WHERE roles LIKE '%1%' OR roles LIKE '%2%' OR roles LIKE '%3%'");
 	if ($sth){
 		$rows = array();
 		while($r = mysqli_fetch_assoc($sth)) {
 			$roles = explode(";",$r['roles']);
 			unset($r['roles']);
-			unset($r['password']);
 			$r['roles'] = $roles;
+			if ($r['hidden_mail'] == 1){
+				unset($r['email']);
+			}
 			$rows[] = $r;
 			
 		}

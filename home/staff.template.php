@@ -17,7 +17,9 @@
 					</div>
 					<div class="col-md-8">
 						<h4 style="white-space: nowrap;overflow: hidden;"><a href="#/user/{{user.name}}"><b>{{user.name}}</b></a></h3>
-						<h6><a href="mailto:{{user.email}}">{{user.email}}</a></h6>
+						<h6>
+							<a ng-if="user.email.length > 0" href="mailto:{{user.email}}">{{user.email}}</a>
+							<span ng-if="user.email.length == 0">&nbsp;</span></h6>
 						<div class="roleplate" style="background-color: {{user.color}}">{{user.role}}</div>
 						<h3>
 							<span ng-if="user.website.length > 0"><a href="{{user.website}}"><i class="fa fa-globe" aria-hidden="true"></i></a></span>
