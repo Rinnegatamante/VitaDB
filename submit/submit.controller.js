@@ -2,6 +2,7 @@ app.controller('submitController',function($scope, $rootScope, $http, $location)
 	$scope.conf = {}
 	$scope.conf.user = $rootScope.user.email
 	$scope.conf.password = $rootScope.user.password
+	$scope.conf.log_author = $rootScope.user.name
 	$scope.conf.uploader = "sahcj.html"
 	$scope.conf.type = "1"
 	if (typeof($rootScope) == 'undefined' || $rootScope.user == undefined || $rootScope.user.role > 2) $location.path("/");

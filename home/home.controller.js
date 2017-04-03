@@ -2,6 +2,7 @@
 app.controller('homeController',function ($scope, $http, $routeParams, $location, $anchorScroll){
 	$scope.field = ''
 	$scope.cat_filter = "0"
+	$scope.updates = []
 	$scope.views = []
 	$scope.views.push([])
 	$scope.views.push([])
@@ -39,6 +40,10 @@ app.controller('homeController',function ($scope, $http, $routeParams, $location
 			$scope.views[Number(res.data[i].type)].push($scope.brews[i])
 		}
 		$scope.views[0] = $scope.brews
+	})
+	
+	$http.post('get_last_updates.php').then(function(res){
+		$scope.updates = res.data
 	})
 	
 	$scope.goTop = function(){

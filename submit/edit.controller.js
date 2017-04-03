@@ -17,6 +17,7 @@ app.controller('editController',function($scope, $rootScope, $http, $location, $
 	$scope.submit = function () {
 		$scope.conf.user = $rootScope.user.email
 		$scope.conf.password = $rootScope.user.password
+		$scope.conf.log_author = $rootScope.user.name
 		if ($scope.conf.type < 8){
 			$http.post('update.php', $scope.conf).then(function(res){
 				alertify.success($scope.conf.name + " edited successfully!");

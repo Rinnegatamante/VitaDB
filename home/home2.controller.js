@@ -6,6 +6,10 @@ app.controller('home2Controller',function($scope, $http, $routeParams, $location
 		$scope.brews = res.data
 	})
 	
+	$http.post('get_last_updates.php').then(function(res){
+		$scope.updates = res.data
+	})
+	
 	$scope.goTop = function(){
 		$location.hash('top');
 		$anchorScroll();

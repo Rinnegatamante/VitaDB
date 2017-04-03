@@ -6,6 +6,7 @@ app.controller('submit2Controller',function($scope, $rootScope, $http, $location
 	$scope.submit = function () {
 		$scope.conf.user = $rootScope.user.email
 		$scope.conf.password = $rootScope.user.password
+		$scope.conf.log_author = $rootScope.user.name
 		$http.post('submit2.php', $scope.conf).then(res => {
 			alertify.success($scope.conf.name + " added successfully!");
 			$location.path('/plugins')

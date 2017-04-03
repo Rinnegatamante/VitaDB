@@ -8,7 +8,7 @@
 	setcookie("XSRF-TOKEN", $xsrf);
 ?>
 <!DOCTYPE html>
-<html ng-app="easyrashApp">
+<html ng-app="VitaDB">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,6 +42,7 @@
 		<script src="templates/lumino/js/lumino.glyphs.js"></script>
 		<script src="templates/lumino/js/jquery-1.11.1.min.js"></script>
 		<script src="js/dependencies/alertify.js-master/dist/js/alertify.js"></script>
+		<script src="js/dependencies/angular-marquee.js"></script>
 		<script src="app.js"></script>
 		<script src="home/home.controller.js"></script>
 		<script src="home/home2.controller.js"></script>
@@ -134,6 +135,12 @@
 					<a href="#/staff">
 						<i class="fa fa-users" aria-hidden="true"></i> &nbsp;
 						Staff List
+					</a>
+				</li>
+				<li>
+					<a href="#/instructions">
+						<i class="fa fa-question" aria-hidden="true"></i> &nbsp;
+						How it works?
 					</a>
 				</li>
 				<li role="presentation" class="divider"></li>

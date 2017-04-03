@@ -6,6 +6,9 @@
 	$email = $request->user;
 	$email2 = addslashes($request->user);
 	if ($email != $email2) die("Invalid email");
+	$log_author = $request->log_author;
+	$log_author2 = addslashes($request->log_author);
+	if ($log_author != $log_author2) die("Invalid author name");
 	$pass = $request->password;
 	$password2 = addslashes($request->password);
 	if ($pass != $password2) die("Invalid password");
@@ -73,6 +76,12 @@
 			mysqli_stmt_bind_param($sth2, "sssssisssss", $name, $icon, $version, $author, $url, $type, $description, $url3, $day, $tid, $long_description);
 			mysqli_stmt_execute($sth2);
 			mysqli_stmt_close($sth2);
+			$sth3 = mysqli_prepare($con,"INSERT INTO vitadb_log(author,object,hb,date) VALUES(?,?,?,?)");
+			$obj = "added";
+			$date = date('Y-m-d H:i:s');
+			mysqli_stmt_bind_param($sth3, "ssss", $log_author, $obj, $name, $date);
+			mysqli_stmt_execute($sth3);
+			mysqli_stmt_close($sth3);
 		}
 	} else {		
 		mysqli_stmt_close($sth);

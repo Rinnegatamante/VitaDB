@@ -1,4 +1,4 @@
-var app = angular.module('easyrashApp', ['ngRoute', 'ngAnimate', 'angularFileUpload'])
+var app = angular.module('VitaDB', ['ngRoute', 'ngAnimate', 'angularFileUpload', 'angular-marquee'])
 
 app.run(function ($http, $rootScope, $location){
 	if (localStorage.getItem('id') && localStorage.getItem('token')) {

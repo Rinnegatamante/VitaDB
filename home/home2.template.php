@@ -6,6 +6,11 @@
 				Plugins Lister ({{brews.length}} plugins available)
 			</li>
 		</ol>
+		<ol class="breadcrumb">
+			<div angular-marquee style="overflow: hidden;">
+				<span ng-repeat="entry in updates"><span ng-if="$index != 0"> - </span><b>{{entry.author}}</b> {{entry.object}} <b>{{entry.hb}}</b> on <b>{{entry.date}} GMT -1:00</b>.</span>
+			</div>
+		</ol>
 	</div>
 	<br>
 	<div class="row">
