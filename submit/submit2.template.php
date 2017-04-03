@@ -22,7 +22,7 @@
 							<input type="text" ng-model="conf.description" class="form-control" placeholder="Plugin Short Description" required="true" />
 						</div>
 						<div class="form-group">
-							<textarea style="resize: vertical;" ng-model="conf.long_description" class="form-control" placeholder="Plugin Long Description (Optional)" />
+							<textarea style="resize: vertical;" ng-model="conf.long_description" class="form-control" placeholder="Plugin Long Description (Optional)"></textarea>
 						</div>
 						<div class="form-group">
 							<input type="text" ng-model="conf.url" class="form-control" placeholder="Download Url" required="true" />

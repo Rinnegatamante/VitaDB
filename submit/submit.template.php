@@ -22,7 +22,7 @@
 							<input type="text" ng-model="conf.description" class="form-control" placeholder="Homebrew Short Description" required="true" />
 						</div>
 						<div class="form-group">
-							<textarea style="resize: vertical;" ng-model="conf.long_description" class="form-control" placeholder="Homebrew Long Description (Optional)" />
+							<textarea style="resize: vertical;" ng-model="conf.long_description" class="form-control" placeholder="Homebrew Long Description (Optional)"></textarea>
 						</div>
 						<div class="form-group">
 							<input type="text" id="url" ng-model="conf.icon" class="form-control" placeholder="Homebrew Icon Name" required="true" />
