@@ -65,7 +65,7 @@
 			
 			<div class="panel-heading">Usergroups</div>
 			<div class="panel-body">
-				If you want to get your profile promoted to a <b>Developer</b> one, please contact <b>Rinnegatamante</b> to verify your account.<br>&nbsp;
+				If you want to get your profile promoted to a <b>Developer</b> one, please contact <a href="#/user/Rinnegatamante">Rinnegatamante</a> to verify your account.<br>&nbsp;
 				<div class="fixed-table-container">
 					<table data-toggle="table" class="table table-hover">
 						<thead>

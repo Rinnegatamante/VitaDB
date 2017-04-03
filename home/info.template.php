@@ -10,7 +10,7 @@
 			<div class="panel-body">
 				<fieldset>
 					<div class="form-group">
-						<h4>Author: </h4> {{conf.author}}
+						<h4>Author: </h4> <a href="#/user/{{conf.author}}">{{conf.author}}</a>
 					</div>
 					<div class="form-group">
 						<h4>Description: </h4> 
