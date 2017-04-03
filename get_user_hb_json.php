@@ -6,6 +6,8 @@
 	$id = $request->uname;
 	$id2 = addslashes($request->uname);
 	if ($id != $id2) die("Invalid id");
+	$id_like1 = "%& " . $id . "%";
+	$id_like2 = "%" . $id . " &%";
 	
 	// Creating connection
 	include 'config.php';
@@ -16,8 +18,8 @@
 		die("Connection failed: " . mysqli_connect_error());
 	} 
 	
-	$sth = mysqli_prepare($con,"SELECT name,icon,version,type,description,id,data,date,titleid,screenshots,long_description,downloads FROM vitadb WHERE author=? ORDER BY date DESC");
-	mysqli_stmt_bind_param($sth, "s", $id);
+	$sth = mysqli_prepare($con,"SELECT DISTINCT name,icon,version,type,description,id,data,date,titleid,screenshots,long_description,downloads FROM vitadb WHERE author=? OR author LIKE ? OR author LIKE ? ORDER BY date DESC");
+	mysqli_stmt_bind_param($sth, "sss", $id, $id_like1, $id_like2);
 	mysqli_stmt_execute($sth);
 	$data = mysqli_stmt_get_result($sth);
 	
