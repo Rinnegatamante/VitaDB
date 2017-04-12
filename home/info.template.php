@@ -10,7 +10,7 @@
 			<div class="panel-body">
 				<fieldset>
 					<div class="form-group">
-						<h4>Author: </h4> <a href="#/user/{{conf.author}}">{{conf.author}}</a>
+						<h4>Author: </h4> <span ng-repeat="author in conf.authors">{{ $first ? '' : ' & '}}<a href="#/user/{{author}}">{{author}}</a></span>
 					</div>
 					<div class="form-group">
 						<h4>Description: </h4> 

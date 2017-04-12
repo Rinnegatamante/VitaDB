@@ -1,4 +1,3 @@
-// Controller for home template
 app.controller('homeController',function ($scope, $http, $routeParams, $location, $anchorScroll){
 	$scope.field = ''
 	$scope.cat_filter = "0"
@@ -14,6 +13,7 @@ app.controller('homeController',function ($scope, $http, $routeParams, $location
 	$http.post('list_hbs_json.php').then(function(res){
 		$scope.brews = res.data
 		for (i=0;i<res.data.length;i++){
+			$scope.brews[i].authors = $scope.brews[i].author.split(" & ")
 			switch (Number(res.data[i].type)){
 				case 1:
 					$scope.brews[i].genre = "Original Game"

@@ -7,7 +7,7 @@
 			</li>
 		</ol>
 		<ol class="breadcrumb">
-			<div angular-marquee style="overflow: hidden;">
+			<div angular-marquee style="overflow: hidden;white-space:nowrap;">
 				<span ng-repeat="entry in updates"><span ng-if="$index != 0"> - </span><b>{{entry.author}}</b> {{entry.object}} <b>{{entry.hb}}</b> on <b>{{entry.date}} GMT -1:00</b>.</span>
 			</div>
 		</ol>
@@ -25,7 +25,7 @@
 				<div class="row no-padding">
 					<div class="col-md-12">
 						<h4 style="white-space: nowrap;overflow: hidden;"><a href="#/info/{{brew.id}}"><b>{{brew.name}} {{brew.version}}</b></a></h3>
-						<h6><a href="#/user/{{brew.author}}">{{brew.author}}</a></h6>
+						<h6><span ng-repeat="author in brew.authors">{{ ($first) ? '' : ' & ' }}<a href="#/user/{{author}}">{{author}}</a></span></h6>
 						<h5 style="white-space: nowrap;overflow: hidden;">{{brew.description}}</h5>
 						<a href="{{brew.url}}"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i> Download</a>
 						&nbsp;

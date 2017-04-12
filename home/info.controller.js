@@ -9,6 +9,7 @@ app.controller('infoController',($scope, $rootScope, $http, $location, $routePar
 		$scope.conf = res.data[0]
 		$scope.conf.long_description = res.data[0].long_description
 		$scope.conf.sshots = res.data[0].screenshots.split(";")
+		$scope.conf.authors = $scope.conf.author.split(" & ")
 	})
 	
 	

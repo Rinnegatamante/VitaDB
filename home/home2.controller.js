@@ -1,9 +1,11 @@
-// Controller for home template
 app.controller('home2Controller',function($scope, $http, $routeParams, $location, $anchorScroll){
 	$scope.field = ''
 
 	$http.post('list_plugins_json.php').then(function(res){
 		$scope.brews = res.data
+		for (i=0;i<res.data.length;i++){
+			$scope.brews[i].authors = $scope.brews[i].author.split(" & ")
+		}
 	})
 	
 	$http.post('get_last_updates.php').then(function(res){
