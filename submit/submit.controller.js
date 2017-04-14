@@ -3,8 +3,9 @@ app.controller('submitController',function($scope, $rootScope, $http, $location)
 	$scope.conf.user = $rootScope.user.email
 	$scope.conf.password = $rootScope.user.password
 	$scope.conf.log_author = $rootScope.user.name
-	$scope.conf.uploader = "sahcj.html"
+	$scope.conf.uploader = "icon0.html"
 	$scope.conf.type = "1"
+	$scope.conf.ssot = ""
 	if (typeof($rootScope) == 'undefined' || $rootScope.user == undefined || $rootScope.user.role > 2) $location.path("/");
 	
 	// submit function
@@ -17,6 +18,7 @@ app.controller('submitController',function($scope, $rootScope, $http, $location)
 	
 	// Watch for changes caused by the iframe
 	setInterval(function(){
+		if ($scope.conf.sshot != document.getElementById('sshot').value) $scope.conf.sshot = document.getElementById('sshot').value
 		if ($scope.conf.titleid != document.getElementById('hb_titleid').value) $scope.conf.titleid = document.getElementById('hb_titleid').value
 		if ($scope.conf.name != document.getElementById('hb_title').value) $scope.conf.name = document.getElementById('hb_title').value
 		if ($scope.conf.icon != document.getElementById('url').value) $scope.conf.icon = document.getElementById('url').value

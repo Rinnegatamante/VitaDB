@@ -40,6 +40,9 @@
 							<input type="text" id="hb_titleid" ng-model="conf.titleid" class="form-control" placeholder="Title ID" required="true" />
 						</div>
 						<div class="form-group">
+							<input type="text" id="sshot" ng-model="conf.sshot" class="form-control" placeholder="Screenshots Data" />
+						</div>
+						<div class="form-group">
 							<select  ng-model="conf.type" required="true" class="form-control">
 								<option value=1>Original Game</option>
 								<option value=2>Game Port</option>
@@ -53,6 +56,7 @@
 						<input type="text" id="pass" style="height:0;width:0;padding:0;border:none;" ng-model="conf.password" />
 						<iframe scrolling="no" frameBorder="0" id="uploader" width="100%" height="80px" ng-src="{{conf.uploader}}" onload="document.getElementById('uploader').contentWindow.document.getElementById('email').value = document.getElementById('email').value;document.getElementById('uploader').contentWindow.document.getElementById('pass').value = document.getElementById('pass').value;document.getElementById('url').value = document.getElementById('uploader').contentWindow.document.getElementById('icon_url').innerHTML;"></iframe>
 						<iframe scrolling="no" frameBorder="0" id="uploader2" width="100%" height="80px" src="param.html" onload="document.getElementById('hb_title').value = document.getElementById('uploader2').contentWindow.document.getElementById('hb_title').innerHTML;document.getElementById('hb_titleid').value = document.getElementById('uploader2').contentWindow.document.getElementById('hb_titleid').innerHTML;"></iframe>
+						<iframe scrolling="no" frameBorder="0" id="uploader3" width="100%" height="250px" src="screenshots.html" onload="document.getElementById('uploader3').contentWindow.document.getElementById('email').value = document.getElementById('email').value;document.getElementById('uploader3').contentWindow.document.getElementById('pass').value = document.getElementById('pass').value;document.getElementById('sshot').value = document.getElementById('uploader3').contentWindow.document.getElementById('sshots_url').innerHTML;document.getElementById('sshot').value = document.getElementById('uploader3').contentWindow.document.getElementById('sshots_url').innerHTML;"></iframe>
 						<br>
 						<input type="submit" value="Submit the homebrew" class="btn btn-primary" />
 					</fieldset>

@@ -11,6 +11,7 @@ app.controller('editController',function($scope, $rootScope, $http, $location, $
 	$http.post('get_hb_unmasked_json.php', data).then(function(res){
 		$scope.conf = res.data[0]
 		$scope.conf.type = "" + res.data[0].type
+		$scope.conf.sshot = res.data[0].screenshots
 	})
 	
 	// submit function

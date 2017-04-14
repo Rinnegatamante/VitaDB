@@ -1,5 +1,6 @@
 app.controller('submit2Controller',function($scope, $rootScope, $http, $location){
 	$scope.conf = {}
+	$scope.conf.ssot = ""
 	if (typeof($rootScope) == 'undefined' || $rootScope.user == undefined || $rootScope.user.role > 2) $location.path("/");
 	
 	// submit function
@@ -12,5 +13,10 @@ app.controller('submit2Controller',function($scope, $rootScope, $http, $location
 			$location.path('/plugins')
 		})
 	}
+	
+	// Watch for changes caused by the iframe
+	setInterval(function(){
+		if ($scope.conf.sshot != document.getElementById('sshot').value) $scope.conf.sshot = document.getElementById('sshot').value
+	}, 500)
 
 })

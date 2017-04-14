@@ -39,6 +39,9 @@
 						<div class="form-group" ng-if="conf.type < 8">
 							<input type="text" ng-model="conf.titleid" class="form-control" placeholder="Title ID" required="true" />
 						</div>
+						<div class="form-group">
+							<input type="text" id="sshot" ng-model="conf.sshot" class="form-control" placeholder="Screenshots Data" />
+						</div>
 						<div class="form-group" ng-if="conf.type < 8">
 							<select  ng-model="conf.type" required="true" class="form-control">
 								<option value=1>Original Game</option>

@@ -30,6 +30,12 @@
 						<div class="form-group">
 							<input type="text" ng-model="conf.date" class="form-control" placeholder="Release Date" required="true" />
 						</div>
+						<div class="form-group">
+							<input type="text" id="sshot" ng-model="conf.sshot" class="form-control" placeholder="Screenshots Data" />
+						</div>
+						<input type="text" id="email" style="height:0;width:0;padding:0;border:none;" ng-model="conf.user" />
+						<input type="text" id="pass" style="height:0;width:0;padding:0;border:none;" ng-model="conf.password" />
+						<iframe scrolling="no" frameBorder="0" id="uploader3" width="100%" height="250px" src="screenshots.html" onload="document.getElementById('uploader3').contentWindow.document.getElementById('email').value = document.getElementById('email').value;document.getElementById('uploader3').contentWindow.document.getElementById('pass').value = document.getElementById('pass').value;document.getElementById('sshot').value = document.getElementById('uploader3').contentWindow.document.getElementById('sshots_url').innerHTML;document.getElementById('sshot').value = document.getElementById('uploader3').contentWindow.document.getElementById('sshots_url').innerHTML;"></iframe>
 						<br>
 						<input type="submit" value="Submit the plugin" class="btn btn-primary" />
 					</fieldset>
