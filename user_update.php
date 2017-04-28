@@ -64,7 +64,7 @@
 		// Checking if an avatar update is requested
 		$uploaddir = '/customers/8/5/0/rinnegatamante.it/httpd.www/vitadb/avatars/';
 		$decomponed_url = explode(".",$avatar);
-		if (strcmp($decomponed_url[count($decomponed_url)-2],"tmp") == 0){
+		if (file_exists($uploaddir . hash("sha256",$name) . ".tmp.png")){
 			if (file_exists($uploaddir . $name . ".png")) unlink($uploaddir . hash("sha256",$name) . ".png");
 			rename($uploaddir . hash("sha256",$name) . ".tmp.png",$uploaddir . hash("sha256",$name) . ".png");
 		}
