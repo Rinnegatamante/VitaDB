@@ -5,7 +5,7 @@ app.controller('submitController',function($scope, $rootScope, $http, $location)
 	$scope.conf.log_author = $rootScope.user.name
 	$scope.conf.uploader = "icon0.html"
 	$scope.conf.type = "1"
-	$scope.conf.ssot = ""
+	$scope.conf.sshot = ""
 	if (typeof($rootScope) == 'undefined' || $rootScope.user == undefined || $rootScope.user.role > 2) $location.path("/");
 	
 	// submit function
