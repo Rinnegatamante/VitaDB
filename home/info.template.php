@@ -30,6 +30,7 @@
 					<a href="{{conf.url}}" ng-if="conf.type < 8"><input type="submit" value="Download VPK" class="btn btn-primary" /></a>
 					<a href="{{conf.url}}" ng-if="conf.type == 8"><input type="submit" value="Download Plugin" class="btn btn-primary" /></a>
 					<a href="{{conf.data}}" ng-if="conf.data.length > 0"><input type="submit" value="Download Data Files" class="btn btn-primary" /></a>
+					<a href="#/edit/{{conf.id}}" ng-if="user && user.role < 5"><input type="submit" value="Edit" class="btn btn-primary" /></a>
 				</fieldset>
 			</div>
 		</div>
