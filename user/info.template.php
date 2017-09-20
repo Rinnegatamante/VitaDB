@@ -1,5 +1,6 @@
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" ng-controller="infouserController">
 	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-offset-1 col-lg-10">
+		<iframe scrolling="no" frameBorder="0" id="uploader" width="100%" height="100px" src="ads.html"></iframe>
 		<br>
 		<div class="panel panel-widget ">
 			<div class="row no-padding">
@@ -65,6 +66,30 @@
 								<th>{{brew.date}}</th>
 								<th>
 									<a href="{{brew.url}}"><input type="submit" value="Download Plugin" class="btn btn-primary" /></a>
+								</th>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<center><h4>PC Tools made by this user:</h4></center>
+			<br>
+			<div class="row no-padding">
+				<div class="fixed-table-container">
+					<table data-toggle="table" class="table table-hover">
+						<thead>
+							<tr>
+								<th>Title</th>
+								<th>Last Update</th>
+								<th>Download</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="brew in conf.tools">
+								<th><a href="#/info/{{brew.id}}">{{brew.name}} {{brew.version}}</a></th>
+								<th>{{brew.date}}</th>
+								<th>
+									<a href="{{brew.url}}"><input type="submit" value="Download Tool" class="btn btn-primary" /></a>
 								</th>
 							</tr>
 						</tbody>

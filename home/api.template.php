@@ -2,12 +2,13 @@
 	<div class="row" id="top">
 		<ol class="breadcrumb">
 			<li>
-				<i class="fa fa-laptop" aria-hidden="true"></i> &nbsp;
+				<i class="fa fa-desktop" aria-hidden="true"></i> &nbsp;
 				Developer Api
 			</li>
 		</ol>
 	</div>
 	<br>
+	<iframe scrolling="no" frameBorder="0" id="uploader" width="100%" height="100px" src="ads.html"></iframe>
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-offset-1 col-lg-10">
 			<select style="display:inline-block;vertical-align:middle;" ng-change="changeView()" ng-model="cat_filter" required="true" class="form-control">
@@ -36,6 +37,11 @@
 							<ul>
 								<li><b>HTTP</b>: http://rinnegatamante.it/vitadb/list_plugins_<span ng-if="cat_filter == 0">json</span><span ng-if="cat_filter == 1">yaml</span>.php</li>
 								<li><b>HTTPS</b>: https://rinnegatamante.it/vitadb/list_plugins_<span ng-if="cat_filter == 0">json</span><span ng-if="cat_filter == 1">yaml</span>.php</li>
+							</ul>
+							<b>Get PC Tools List</b>: <br>
+							<ul>
+								<li><b>HTTP</b>: http://rinnegatamante.it/vitadb/list_tools_<span ng-if="cat_filter == 0">json</span><span ng-if="cat_filter == 1">yaml</span>.php</li>
+								<li><b>HTTPS</b>: https://rinnegatamante.it/vitadb/list_tools_<span ng-if="cat_filter == 0">json</span><span ng-if="cat_filter == 1">yaml</span>.php</li>
 							</ul>
 						</div>
 					</fieldset>

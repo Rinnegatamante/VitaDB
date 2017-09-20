@@ -8,6 +8,7 @@
 				<div class="panel-heading">
 					<a href="#/" ng-if="conf.type < 8"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> &nbsp;
 					<a href="#/plugins" ng-if="conf.type == 8"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> &nbsp;
+					<a href="#/tools" ng-if="conf.type == 9"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> &nbsp;
 					<img class="icon" ng-if="conf.type < 8" src="https://rinnegatamante.it/vitadb/icons/{{conf.icon}}" style="height: 100%;" /> {{conf.name}} {{conf.version}}
 				</div>
 				<div class="panel-body">
@@ -33,6 +34,7 @@
 						<br>
 						<a href="{{conf.url}}" ng-if="conf.type < 8"><input type="submit" value="Download VPK" class="btn btn-primary" /></a>
 						<a href="{{conf.url}}" ng-if="conf.type == 8"><input type="submit" value="Download Plugin" class="btn btn-primary" /></a>
+						<a href="{{conf.url}}" ng-if="conf.type == 9"><input type="submit" value="Download Tool" class="btn btn-primary" /></a>
 						<a href="{{conf.data}}" ng-if="conf.data.length > 0"><input type="submit" value="Download Data Files" class="btn btn-primary" /></a>
 						<a href="" data-toggle="modal" data-target="#vpkQR" ng-if="conf.type < 8"><input type="submit" value="Get QR Code (VPK)" class="btn btn-primary" /></a>
 						<a href="" data-toggle="modal" data-target="#pluginQR" ng-if="conf.type == 8"><input type="submit" value="Get QR Code" class="btn btn-primary" /></a>

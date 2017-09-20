@@ -44,8 +44,10 @@ app.controller('infouserController',($scope, $rootScope, $http, $location, $rout
 		}
 		$scope.conf.hbs = []
 		$scope.conf.plugins = []
+		$scope.conf.tools = []
 		var hbs_idx = 0
 		var plugins_idx = 0
+		var tools_idx = 0
 		$http.post('get_user_hb_json.php', data).then(res2 => {
 			for (i=0;i<res2.data.length;i++){
 				switch (Number(res2.data[i].type)){
@@ -78,6 +80,10 @@ app.controller('infouserController',($scope, $rootScope, $http, $location, $rout
 						$scope.conf.hbs.push(res2.data[i])
 						$scope.conf.hbs[hbs_idx].genre = "Interpreter"
 						hbs_idx++
+						break;
+					case 9:
+						$scope.conf.tools.push(res2.data[i])
+						tools_idx++
 						break;
 					default:
 						$scope.conf.plugins.push(res2.data[i])

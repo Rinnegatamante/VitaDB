@@ -31,8 +31,8 @@
 		<!--<script type="text/javascript">
 			window.onerror = function (errorMsg, url, lineNumber) {
 				alert('Error: ' + errorMsg + ' Script: ' + url + ' Line: ' + lineNumber);
-		}-->
-		</script>
+		}
+		</script>-->
 		<script src="node_modules/angular/angular.min.js"></script>
 		<script src="node_modules/angular-route/angular-route.min.js"></script>
 		<script src="node_modules/angular-animate/angular-animate.min.js"></script>
@@ -46,6 +46,7 @@
 		<script src="app.js"></script>
 		<script src="home/home.controller.js"></script>
 		<script src="home/home2.controller.js"></script>
+		<script src="home/home3.controller.js"></script>
 		<script src="home/api.controller.js"></script>
 		<script src="home/info.controller.js"></script>
 		<script src="home/staff.controller.js"></script>
@@ -55,6 +56,7 @@
 		<script src="login/register.controller.js"></script>
 		<script src="submit/submit.controller.js"></script>
 		<script src="submit/submit2.controller.js"></script>
+		<script src="submit/submit3.controller.js"></script>
 		<script src="submit/edit.controller.js"></script>
 		<script src="user/info.controller.js"></script>
 		<script src="user/profile.controller.js"></script>
@@ -126,8 +128,14 @@
 					</a>
 				</li>
 				<li>
-					<a href="#/api">
+					<a href="#/tools">
 						<i class="fa fa-laptop" aria-hidden="true"></i> &nbsp;
+						PC Tools
+					</a>
+				</li>
+				<li>
+					<a href="#/api">
+						<i class="fa fa-desktop" aria-hidden="true"></i> &nbsp;
 						Developer Api
 					</a>
 				</li>
@@ -154,6 +162,12 @@
 					<a href="#/submit2">
 						<i class="fa fa-plus" aria-hidden="true"></i> &nbsp;
 						Submit a new plugin
+					</a>
+				</li>
+				<li ng-if="user  && user.role < 3">
+					<a href="#/submit3">
+						<i class="fa fa-plus" aria-hidden="true"></i> &nbsp;
+						Submit a new PC tool
 					</a>
 				</li>
 				<li ng-if="user">

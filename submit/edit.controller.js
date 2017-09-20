@@ -24,10 +24,15 @@ app.controller('editController',function($scope, $rootScope, $http, $location, $
 				alertify.success($scope.conf.name + " edited successfully!");
 				$location.path('/')
 			})
-		}else{
+		}else if ($scope.conf.type == 8){
 			$http.post('update2.php', $scope.conf).then(function(res){
 				alertify.success($scope.conf.name + " edited successfully!");
 				$location.path('/plugins')
+			})
+		}else{
+			$http.post('update3.php', $scope.conf).then(function(res){
+				alertify.success($scope.conf.name + " edited successfully!");
+				$location.path('/tools')
 			})
 		}
 	}
