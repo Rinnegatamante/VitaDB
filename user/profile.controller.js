@@ -1,4 +1,4 @@
-app.controller('profileController',($scope, $rootScope, $http, $location, $interval) => {
+app.controller('profileController',function ($scope, $http, $routeParams, $location, $anchorScroll){
 	$scope.conf = {}
 	if (typeof($rootScope) == 'undefined' || $rootScope.user == undefined) $location.path("/");
 	
@@ -6,7 +6,7 @@ app.controller('profileController',($scope, $rootScope, $http, $location, $inter
 		uname: $rootScope.user.name
 	}
 	
-	$http.post('get_user_info.php', data).then(res => {
+	$http.post('get_user_info.php', data).then(function(res){
 		$scope.conf = res.data[0]
 		$scope.conf.name = $rootScope.user.name
 		$scope.conf.password = $rootScope.user.password
@@ -48,7 +48,7 @@ app.controller('profileController',($scope, $rootScope, $http, $location, $inter
 	
 	// submit function
 	$scope.submit = function () {
-		$http.post('user_update.php', $scope.conf).then(res => {
+		$http.post('user_update.php', $scope.conf).then(function(res){
 			alertify.success("Profile updated successfully!");
 			$location.path('/user/' + $scope.conf.name)
 		})

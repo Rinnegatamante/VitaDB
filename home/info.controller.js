@@ -1,18 +1,16 @@
 // Controller for newconf template
-app.controller('infoController',($scope, $rootScope, $http, $location, $routeParams) => {
+app.controller('infoController',function ($scope, $http, $routeParams, $location, $anchorScroll){
 	$scope.conf = {}
 	var data = {
 		hid: $routeParams.hid
 	}
 	
-	$http.post('get_hb_json.php', data).then(res => {
+	$http.post('get_hb_json.php', data).then(function(res){
 		$scope.conf = res.data[0]
 		$scope.conf.long_description = res.data[0].long_description
 		$scope.conf.sshots = res.data[0].screenshots.split(";")
 		$scope.conf.authors = $scope.conf.author.split(" & ")
 	})
-	
-	
 	
 })
 

@@ -1,10 +1,10 @@
-app.controller('infouserController',($scope, $rootScope, $http, $location, $routeParams) => {
+app.controller('infouserController',function ($scope, $http, $routeParams, $location, $anchorScroll){
 	$scope.conf = {}
 	var data = {
 		uname: $routeParams.uname
 	}
 	
-	$http.post('get_user_info.php', data).then(res => {
+	$http.post('get_user_info.php', data).then(function(res){
 		$scope.conf = res.data[0]
 		$scope.conf.name = $routeParams.uname
 		if (res.data[0].hidden_mail == 1){
@@ -51,7 +51,7 @@ app.controller('infouserController',($scope, $rootScope, $http, $location, $rout
 		var hbs_idx = 0
 		var plugins_idx = 0
 		var tools_idx = 0
-		$http.post('get_user_hb_json.php', data).then(res2 => {
+		$http.post('get_user_hb_json.php', data).then(function(res2){
 			for (i=0;i<res2.data.length;i++){
 				switch (Number(res2.data[i].type)){
 					case 1:
