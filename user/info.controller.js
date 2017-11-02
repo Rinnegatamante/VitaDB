@@ -37,6 +37,9 @@ app.controller('infouserController',($scope, $rootScope, $http, $location, $rout
 			}else if (res.data[0].roles[0] == "5"){
 				$scope.conf.role = "User"
 				$scope.conf.color = "blue"
+			}else if (res.data[0].roles[0] == "6"){
+				$scope.conf.role = "Supporter"
+				$scope.conf.color = "Tomato"
 			}else{
 				$scope.conf.role = "Guest"
 				$scope.conf.color = "black"

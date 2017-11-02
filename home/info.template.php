@@ -2,7 +2,7 @@
 	<br><br>
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-offset-1 col-lg-10">
-			<iframe scrolling="no" frameBorder="0" id="uploader" width="100%" height="100px" src="ads.html"></iframe>
+			<iframe ng-if="(!user) || (user.role == 5)" scrolling="no" frameBorder="0" id="uploader" width="100%" height="100px" src="ads.html"></iframe>
 			<br>
 			<div class="panel panel-default">
 				<div class="panel-heading">

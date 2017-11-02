@@ -98,6 +98,9 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
 		.when('/staff', {
 			templateUrl: 'home/staff.template.php'
 		})
+		.when('/supporters', {
+			templateUrl: 'home/supporters.template.php'
+		})
 		.when('/instructions', {
 			templateUrl: 'home/instructions.template.php'
 		})

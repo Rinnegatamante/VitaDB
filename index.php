@@ -50,6 +50,7 @@
 		<script src="home/api.controller.js"></script>
 		<script src="home/info.controller.js"></script>
 		<script src="home/staff.controller.js"></script>
+		<script src="home/supporters.controller.js"></script>
 		<script src="home/instructions.controller.js"></script>
 		<script src="login/login.controller.js"></script>
 		<script src="login/logout.controller.js"></script>
@@ -146,6 +147,12 @@
 					</a>
 				</li>
 				<li>
+					<a href="#/supporters">
+						<i class="fa fa-product-hunt" aria-hidden="true"></i> &nbsp;
+						Supporters
+					</a>
+				</li>
+				<li>
 					<a href="#/instructions">
 						<i class="fa fa-question" aria-hidden="true"></i> &nbsp;
 						How it works?
@@ -193,15 +200,6 @@
 					</a>
 				</li>
 			</ul>
-			<div id="bot-part2">
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-					<input type="hidden" name="cmd" value="_s-xclick">
-					<input type="hidden" name="hosted_button_id" value="THAZNKQUQT9D8">
-					<center>
-						<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
-					</center>
-				</form>
-			</div>
 		</div>
 		<div ng-view class="slide page"></div>
 		<script src="templates/lumino/js/bootstrap.min.js"></script>

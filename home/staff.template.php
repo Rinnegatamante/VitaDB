@@ -9,6 +9,7 @@
 	</div>
 	<br>	
 	<div class="row" id="hb-list">
+		<iframe ng-if="(!user) || (user.role == 5)" scrolling="no" frameBorder="0" id="uploader" width="100%" height="100px" src="ads.html"></iframe>
 		<div ng-repeat="user in staff" class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 			<div class="panel panel-widget ">
 				<div class="row no-padding">

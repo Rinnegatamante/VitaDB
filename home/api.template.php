@@ -8,7 +8,7 @@
 		</ol>
 	</div>
 	<br>
-	<iframe scrolling="no" frameBorder="0" id="uploader" width="100%" height="100px" src="ads.html"></iframe>
+	<iframe ng-if="(!user) || (user.role == 5)" scrolling="no" frameBorder="0" id="uploader" width="100%" height="100px" src="ads.html"></iframe>
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-offset-1 col-lg-10">
 			<select style="display:inline-block;vertical-align:middle;" ng-change="changeView()" ng-model="cat_filter" required="true" class="form-control">
