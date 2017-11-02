@@ -19,7 +19,7 @@
 					<tbody>
 						<tr ng-repeat="sup in users">
 							<th><a href="#/user/{{sup.name}}"><img class="icon" src="https://rinnegatamante.it/vitadb/avatars/{{sup.avatar}}" style="max-width: 64px;" /></a></th>
-							<th><a href="#/info/{{sup.name}}">{{sup.name}}</a></th>
+							<th><a href="#/user/{{sup.name}}">{{sup.name}}</a></th>
 							<th>{{sup.supporter_date}}</th>
 						</tr>
 					</tbody>

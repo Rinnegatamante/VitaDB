@@ -1,4 +1,4 @@
-app.controller('profileController',function ($scope, $http, $routeParams, $location, $anchorScroll){
+app.controller('profileController',function ($scope, $rootScope, $http, $location, $interval){
 	$scope.conf = {}
 	if (typeof($rootScope) == 'undefined' || $rootScope.user == undefined) $location.path("/");
 	
