@@ -23,6 +23,12 @@
 							<span ng-if="!conf.long_description" style="white-space: pre-line;">{{conf.description}}</span>
 						</div>
 						<div class="form-group">
+							<h4>Additional info: </h4>
+							<span ng-if="!conf.source && !conf.release_page">No additional info available.</span>
+							<span ng-if="conf.source" style="white-space: pre-line;">Sourcecode: <a href="{{conf.source}}">Click Here (External Link)</a><br></span>
+							<span ng-if="conf.release_page" style="white-space: pre-line;">Release Page: <a href="{{conf.release_page}}">Click Here (External Link)</a></span>
+						</div>
+						<div class="form-group">
 							<h4>Analytics: </h4>
 							Global downloads count: {{conf.downloads}}
 						</div>

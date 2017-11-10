@@ -16,7 +16,7 @@
 		die("Connection failed: " . mysqli_connect_error());
 	} 
 	
-	$sth = mysqli_prepare($con,"SELECT name,icon,version,author,type,description,id,data,date,titleid,screenshots,long_description,downloads FROM vitadb WHERE id=?");
+	$sth = mysqli_prepare($con,"SELECT name,icon,version,author,type,description,id,data,date,titleid,screenshots,long_description,downloads,source,release_page FROM vitadb WHERE id=?");
 	mysqli_stmt_bind_param($sth, "i", $id);
 	mysqli_stmt_execute($sth);
 	$data = mysqli_stmt_get_result($sth);

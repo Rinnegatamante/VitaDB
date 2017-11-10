@@ -52,6 +52,12 @@
 								<option value=3>Interpreter</option>
 							</select>
 						</div>
+						<div class="form-group">
+							<input type="text" ng-model="conf.source" class="form-control" placeholder="Sourcecode Link" />
+						</div>
+						<div class="form-group">
+							<input type="text" ng-model="conf.release_page" class="form-control" placeholder="Release Page Link" />
+						</div>
 						<br>
 						<input type="submit" value="Submit edited content" class="btn btn-primary" />
 					</fieldset>

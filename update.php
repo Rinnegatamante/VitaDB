@@ -44,6 +44,10 @@
 	if ($id != $id2) die("Invalid ID");
 	$description = $request->description;
 	$long_description = $request->long_description;
+	$sshot = $request->sshot;
+	if (strlen($sshot) < 5) $sshot = "";
+	$source = $request->source;
+	$release_page = $request->release_page;
 	
 	// Creating connection
 	include 'config.php';
@@ -74,8 +78,8 @@
 		}
 		mysqli_stmt_close($sth);
 		if ((strcmp($roles[0],"1") == 0) or (strcmp($roles[0],"2") == 0) or (strcmp($roles[0],"3") == 0)){
-			$sth2 = mysqli_prepare($con,"UPDATE vitadb SET name=?,icon=?,version=?,author=?,url=?,type=?,description=?,data=?,date=?,titleid=?,long_description=? WHERE id=?");
-			mysqli_stmt_bind_param($sth2, "sssssisssssi", $name, $icon, $version, $author, $url, $type, $description, $url3, $day, $tid, $long_description, $id);
+			$sth2 = mysqli_prepare($con,"UPDATE vitadb SET name=?,icon=?,version=?,author=?,url=?,type=?,description=?,data=?,date=?,titleid=?,long_description=?,screenshots=?,source=?,release_page=? WHERE id=?");
+			mysqli_stmt_bind_param($sth2, "sssssissssssssi", $name, $icon, $version, $author, $url, $type, $description, $url3, $day, $tid, $long_description, $sshot, $source, $release_page, $id);
 			mysqli_stmt_execute($sth2);
 			mysqli_stmt_close($sth2);
 			$sth3 = mysqli_prepare($con,"INSERT INTO vitadb_log(author,object,hb,date) VALUES(?,?,?,?)");
