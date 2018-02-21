@@ -33,6 +33,36 @@
 							Global downloads count: {{conf.downloads}}
 						</div>
 						<div class="form-group">
+							<h4>Support the authors: </h4>
+							<div class="row no-padding">
+								<div class="fixed-table-container">
+									<table data-toggle="table" class="table table-hover">
+										<thead>
+											<tr>
+												<th>Author Name</th>
+												<th>Donation Methods</th>
+												<th>Bitcoin Wallet</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr ng-repeat="author in conf.authors_info">
+												<td><a href="#/user/{{author.name}}">{{author.name}}</a></td>
+												<td>
+													<span ng-if="author.patreon.length <= 0 && author.paypal.length <= 0">No available donation methods</span>
+													<span ng-if="author.patreon.length > 0"><a href="https://www.patreon.com/{{author.patreon}}"><i class="fab fa-patreon" aria-hidden="true"></i></a></span>
+													<span ng-if="author.paypal.length > 0"><a href="{{author.paypal}}"><i class="fab fa-paypal" aria-hidden="true"></i></a></span>
+												</td>
+												<td>
+													<span ng-if="author.bitcoin.length > 0"><b>{{author.bitcoin}}</b></span>
+													<span ng-if="author.bitcoin.length <= 0">No Bitcoin address available.</span>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
 							<h4>Screenshots: </h4>
 							<div ng-if="conf.screenshots" gallery="" images="conf.sshots"></div>
 							<span ng-if="!conf.screenshots">No screenshots available.</span>

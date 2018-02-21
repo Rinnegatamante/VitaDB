@@ -18,7 +18,10 @@
 	$avatar = $request->avatar;
 	$twitter = $request->twitter;
 	$github = $request->github;
-	$website = $request->website;	
+	$website = $request->website;
+	$paypal = $request->paypal;
+	$bitcoin = $request->bitcoin;
+	$patreon = $request->patreon;	
 	
 	// Creating connection
 	include 'config.php';
@@ -49,13 +52,13 @@
 	
 	if (mysqli_num_rows($data)>0){
 		mysqli_stmt_close($sth);
-		$sth2 = mysqli_prepare($con,"UPDATE vitadb_users SET avatar=?,twitter=?,github=?,website=?,hidden_mail=? WHERE name=?");
+		$sth2 = mysqli_prepare($con,"UPDATE vitadb_users SET avatar=?,twitter=?,github=?,website=?,hidden_mail=?,paypal=?,bitcoin=?,patreon=? WHERE name=?");
 		if (strcmp($avatar, "unknown.jpg")==0){
 			$avatar = "";
-			mysqli_stmt_bind_param($sth2, "ssssss", $avatar, $twitter, $github, $website, $hidden, $name);
+			mysqli_stmt_bind_param($sth2, "sssssssss", $avatar, $twitter, $github, $website, $hidden, $paypal, $bitcoin, $patreon, $name);
 		}else{
 			$avatar = hash("sha256",$name) . ".png";
-			mysqli_stmt_bind_param($sth2, "ssssss", $avatar, $twitter, $github, $website, $hidden, $name);
+			mysqli_stmt_bind_param($sth2, "sssssssss", $avatar, $twitter, $github, $website, $hidden, $paypal, $bitcoin, $patreon, $name);
 		}
 		mysqli_stmt_execute($sth2);
 		mysqli_stmt_close($sth2);

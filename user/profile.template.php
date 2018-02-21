@@ -32,16 +32,28 @@
 							<h4>Social:</h4>
 						</div>
 						<div class="form-group">
-							<i class="fa fa-twitter" aria-hidden="true"></i> Twitter Account
+							<i class="fab fa-twitter" aria-hidden="true"></i> Twitter Account
 							<input id="twitter" type="text" ng-model="conf.twitter" class="form-control" placeholder="Twitter Account" />
 						</div>
 						<div class="form-group">
-							<i class="fa fa-github" aria-hidden="true"></i> Github Account
+							<i class="fab fa-github" aria-hidden="true"></i> Github Account
 							<input type="text" ng-model="conf.github" class="form-control" placeholder="Github Account" />
 						</div>
 						<div class="form-group">
 							<i class="fa fa-globe" aria-hidden="true"></i> Personal Website
 							<input type="text" ng-model="conf.website" class="form-control" placeholder="Personal Website" />
+						</div>
+						<div class="form-group">
+							<i class="fab fa-paypal" aria-hidden="true"></i> PayPal.Me Account
+							<input type="text" ng-model="conf.paypal" class="form-control" placeholder="PayPal.Me Account" />
+						</div>
+						<div class="form-group">
+							<i class="fab fa-bitcoin" aria-hidden="true"></i> Bitcoin Donation Address
+							<input type="text" ng-model="conf.bitcoin" class="form-control" placeholder="Bitcoin Donation Address" />
+						</div>
+						<div class="form-group">
+							<i class="fab fa-patreon" aria-hidden="true"></i> Patreon Account
+							<input type="text" ng-model="conf.patreon" class="form-control" placeholder="Patreon Account" />
 						</div>
 						<div class="form-group">
 							<h4>Avatar:</h4>

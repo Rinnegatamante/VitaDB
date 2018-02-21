@@ -16,7 +16,7 @@
 		die("Connection failed: " . mysqli_connect_error());
 	} 
 	
-	$sth = mysqli_prepare($con,"SELECT email,roles,avatar,twitter,website,github,hidden_mail FROM vitadb_users WHERE name=?");
+	$sth = mysqli_prepare($con,"SELECT name,email,roles,avatar,twitter,website,github,hidden_mail,paypal,bitcoin,patreon FROM vitadb_users WHERE name=?");
 	mysqli_stmt_bind_param($sth, "s", $id);
 	mysqli_stmt_execute($sth);
 	$data = mysqli_stmt_get_result($sth);
