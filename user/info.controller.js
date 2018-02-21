@@ -17,7 +17,6 @@ app.controller('infouserController',function ($scope, $http, $routeParams, $loca
 				name: $routeParams.uname,
 				color: "black"
 			}
-			console.log("test")
 		}else{
 			if (res.data[0].avatar.length < 4){
 				$scope.conf.avatar = "unknown.jpg"

@@ -18,7 +18,7 @@
 		<link href="templates/lumino/css/datepicker3.css" rel="stylesheet">
 		<link href="templates/lumino/css/styles.css" rel="stylesheet">
 		<link href="js/dependencies/alertify.js-master/dist/css/alertify.css" rel="stylesheet" id="alertifyCSS">
-		<link href="css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="css/font-awesome/css/fontawesome-all.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="js/dependencies/tooltipster-master/dist/css/tooltipster.bundle.min.css" />
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 		<link href="css/style.css" rel="stylesheet">
@@ -148,7 +148,7 @@
 				</li>
 				<li>
 					<a href="#/supporters">
-						<i class="fa fa-product-hunt" aria-hidden="true"></i> &nbsp;
+						<i class="fab fa-patreon" aria-hidden="true"></i> &nbsp;
 						Supporters
 					</a>
 				</li>
