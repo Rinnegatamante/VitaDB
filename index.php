@@ -20,7 +20,7 @@
 		<link href="js/dependencies/alertify.js-master/dist/css/alertify.css" rel="stylesheet" id="alertifyCSS">
 		<link href="css/font-awesome/css/fontawesome-all.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="js/dependencies/tooltipster-master/dist/css/tooltipster.bundle.min.css" />
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
 		<link href="css/style.css" rel="stylesheet">
 		<link href="css/vitadb.css" rel="stylesheet">
 		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
@@ -87,7 +87,7 @@
 									<a href="#profile">
 										<svg class="glyph stroked male user ">
 											<use xlink:href="#stroked-male-user"/>
-										</svg>		
+										</svg>
 										Profile
 									</a>
 								</li>
