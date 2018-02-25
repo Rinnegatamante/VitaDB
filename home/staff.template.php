@@ -7,7 +7,7 @@
 			</li>
 		</ol>
 	</div>
-	<br>	
+	<br>
 	<div class="row" id="hb-list">
 		<iframe ng-if="(!user) || (user.role == 5)" scrolling="no" frameBorder="0" id="uploader" width="100%" height="100px" src="ads.html"></iframe>
 		<div ng-repeat="user in staff" class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
@@ -24,8 +24,8 @@
 						<div class="roleplate" style="background-color: {{user.color}}">{{user.role}}</div>
 						<h3>
 							<span ng-if="user.website.length > 0"><a href="{{user.website}}"><i class="fa fa-globe" aria-hidden="true"></i></a></span>
-							<span ng-if="user.twitter.length > 0"><a href="https://twitter.com/{{user.twitter}}"><i class="fa fa-twitter" aria-hidden="true"></i></a></span>
-							<span ng-if="user.github.length > 0"><a href="https://github.com/{{user.github}}"><i class="fa fa-github" aria-hidden="true"></i></a></span>
+							<span ng-if="user.twitter.length > 0"><a href="https://twitter.com/{{user.twitter}}"><i class="fab fa-twitter" aria-hidden="true"></i></a></span>
+							<span ng-if="user.github.length > 0"><a href="https://github.com/{{user.github}}"><i class="fab fa-github" aria-hidden="true"></i></a></span>
 							<span ng-if="user.github.length == 0 && user.twitter.length == 0 && user.website.length == 0">&nbsp;</span>
 						</h3>
 					</div>
@@ -33,5 +33,4 @@
 			</div>
 		</div>
 	</div>
-	
 </div>
