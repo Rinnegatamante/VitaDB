@@ -50,7 +50,7 @@
 												<td>
 													<span ng-if="author.patreon.length <= 0 && author.paypal.length <= 0">No available donation methods</span>
 													<span ng-if="author.patreon.length > 0"><a href="https://www.patreon.com/{{author.patreon}}"><i class="fab fa-patreon" aria-hidden="true"></i></a></span>
-													<span ng-if="author.paypal.length > 0"><a href="{{author.paypal}}"><i class="fab fa-paypal" aria-hidden="true"></i></a></span>
+													<span ng-if="author.paypal.length > 0"><a href="https://www.paypal.me/{{author.paypal}}"><i class="fab fa-paypal" aria-hidden="true"></i></a></span>
 												</td>
 												<td>
 													<span ng-if="author.bitcoin.length > 0"><b>{{author.bitcoin}}</b></span>

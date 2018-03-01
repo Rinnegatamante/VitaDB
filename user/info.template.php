@@ -19,7 +19,7 @@
 							<span ng-if="conf.github.length > 0"><a href="https://github.com/{{conf.github}}"><i class="fab fa-github" aria-hidden="true"></i></a></span>
 							<span ng-if="conf.github.length == 0 && conf.twitter.length == 0 && conf.website.length == 0">&nbsp;</span>
 							<span ng-if="conf.patreon.length > 0"><a href="https://www.patreon.com/{{conf.patreon}}"><i class="fab fa-patreon" aria-hidden="true"></i></a></span>
-							<span ng-if="conf.paypal.length > 0"><a href="{{conf.paypal}}"><i class="fab fa-paypal" aria-hidden="true"></i></a></span>
+							<span ng-if="conf.paypal.length > 0"><a href="https://www.paypal.me/{{conf.paypal}}"><i class="fab fa-paypal" aria-hidden="true"></i></a></span>
 							<span ng-if="conf.bitcoin.length > 0"><a href="" data-toggle="modal" data-target="#bitcoinPopup"><i class="fab fa-bitcoin" aria-hidden="true"></i></a></span>
 						</h3>
 					</div>
