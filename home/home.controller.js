@@ -10,6 +10,7 @@ app.controller('homeController',function ($scope, $http, $routeParams, $location
 	$scope.views.push([])
 	$scope.views.push([])
 	$scope.views.push([])
+	$scope.views.push([])
 	$http.post('list_hbs_json.php').then(function(res){
 		$scope.brews = res.data
 		for (i=0;i<res.data.length;i++){
