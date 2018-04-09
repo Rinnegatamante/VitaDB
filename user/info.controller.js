@@ -1,4 +1,12 @@
-app.controller('infouserController',function ($scope, $http, $routeParams, $location, $anchorScroll){
+app.controller('infouserController',function ($scope, $rootScope, $http, $routeParams, $location, $anchorScroll, $css){
+	
+	$css.removeAll();
+	$css.add([
+		'templates/lumino/css/styles-' + $rootScope.theme + '.css',
+		'css/style-' + $rootScope.theme + '.css',
+		'css/vitadb-' + $rootScope.theme + '.css',
+	]);
+	
 	$scope.conf = {}
 	var data = {
 		uname: $routeParams.uname

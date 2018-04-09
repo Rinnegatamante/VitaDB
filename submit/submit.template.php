@@ -40,6 +40,12 @@
 							<input type="text" id="hb_titleid" ng-model="conf.titleid" class="form-control" placeholder="Title ID" required="true" />
 						</div>
 						<div class="form-group">
+							<input type="text" ng-model="conf.source" class="form-control" placeholder="Sourcecode Link" />
+						</div>
+						<div class="form-group">
+							<input type="text" ng-model="conf.release_page" class="form-control" placeholder="Release Page Link" />
+						</div>
+						<div class="form-group">
 							<input type="text" id="sshot" ng-model="conf.sshot" class="form-control" placeholder="Screenshots Data" />
 						</div>
 						<div class="form-group">

@@ -1,5 +1,11 @@
-// Controller for login template
-app.controller('registerController',function($rootScope, $scope, $http, $location){
+app.controller('registerController',function($rootScope, $scope, $http, $location, $css){
+	
+	$css.removeAll();
+	$css.add([
+		'templates/lumino/css/styles-' + $rootScope.theme + '.css',
+		'css/style-' + $rootScope.theme + '.css',
+		'css/vitadb-' + $rootScope.theme + '.css',
+	]);
 	
 	// Check if the user is logged, if so redirect to dashboard
 	if ($rootScope.user != null){

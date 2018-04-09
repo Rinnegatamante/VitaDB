@@ -1,4 +1,12 @@
-app.controller('profileController',function ($scope, $rootScope, $http, $location, $interval){
+app.controller('profileController',function ($scope, $rootScope, $http, $location, $interval, $css){
+	
+	$css.removeAll();
+	$css.add([
+		'templates/lumino/css/styles-' + $rootScope.theme + '.css',
+		'css/style-' + $rootScope.theme + '.css',
+		'css/vitadb-' + $rootScope.theme + '.css',
+	]);
+	
 	$scope.conf = {}
 	if (typeof($rootScope) == 'undefined' || $rootScope.user == undefined) $location.path("/");
 	
@@ -8,6 +16,7 @@ app.controller('profileController',function ($scope, $rootScope, $http, $locatio
 	
 	$http.post('get_user_info.php', data).then(function(res){
 		$scope.conf = res.data[0]
+		$scope.conf.theme = $rootScope.theme
 		$scope.conf.name = $rootScope.user.name
 		$scope.conf.password = $rootScope.user.password
 		$scope.conf.hidden_mail = "" + res.data[0].hidden_mail
@@ -19,7 +28,6 @@ app.controller('profileController',function ($scope, $rootScope, $http, $locatio
 				name: $rootScope.user.name,
 				color: "black"
 			}
-			console.log("test")
 		}else{
 			if (res.data[0].avatar.length < 4){
 				$scope.conf.avatar = "unknown.jpg"
@@ -51,6 +59,12 @@ app.controller('profileController',function ($scope, $rootScope, $http, $locatio
 	
 	// submit function
 	$scope.submit = function () {
+		
+		$rootScope.theme = $scope.conf.theme
+		if (localStorage.getItem('id') && localStorage.getItem('token')) {
+			localStorage.setItem('theme', $rootScope.theme)
+		}
+		
 		$http.post('user_update.php', $scope.conf).then(function(res){
 			alertify.success("Profile updated successfully!");
 			$location.path('/user/' + $scope.conf.name)

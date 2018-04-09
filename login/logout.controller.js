@@ -1,4 +1,3 @@
-// Controller for logout template
 app.controller('logoutController',function($rootScope, $scope, $http, $location){
 	
 	// If user used 'Remember me' option during login, we purge localStorage items
@@ -7,6 +6,7 @@ app.controller('logoutController',function($rootScope, $scope, $http, $location)
 		localStorage.removeItem('token')
 		localStorage.removeItem('name')
 		localStorage.removeItem('role')
+		localStorage.removeItem('theme')
 	}
 	
 	alertify.success('Bye bye, ' + $rootScope.user.name + '')

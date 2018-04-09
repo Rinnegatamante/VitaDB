@@ -38,25 +38,25 @@
 						</thead>
 						<tbody>
 							<tr>
-								<th><b>Trusted Zone</b></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
+								<td><b>Trusted Zone</b></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
 							</tr>
 							<tr>
-								<th><b>Semi-Trusted Zone</b></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></th>
+								<td><b>Semi-Trusted Zone</b></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></td>
 							</tr>
 							<tr>
-								<th><b>Untrusted Zone</b></th>
-								<th><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></th>
+								<td><b>Untrusted Zone</b></td>
+								<td><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></td>
 							</tr>
 						</tbody>
 					</table>
@@ -80,52 +80,52 @@
 						</thead>
 						<tbody>
 							<tr>
-								<th><div class="roleplate" style="background-color: darkviolet;">Founder</div></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
+								<td><div class="roleplate" style="background-color: darkviolet;">Founder</div></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
 							</tr>
 							<tr>
-								<th><div class="roleplate" style="background-color: red;">Administrator</div></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
+								<td><div class="roleplate" style="background-color: red;">Administrator</div></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
 							</tr>
 							<tr>
-								<th><div class="roleplate" style="background-color: green;">Moderator</div></th>
-								<th><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
+								<td><div class="roleplate" style="background-color: green;">Moderator</div></td>
+								<td><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
 							</tr>
 							<tr>
-								<th><div class="roleplate" style="background-color: orange;">Developer</div></th>
-								<th><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></th>
+								<td><div class="roleplate" style="background-color: orange;">Developer</div></td>
+								<td><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></td>
 							</tr>
 							<tr>
-								<th><div class="roleplate" style="background-color: blue;">User</div></th>
-								<th><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></th>
+								<td><div class="roleplate" style="background-color: blue;">User</div></td>
+								<td><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/b72d8036d09ed02343e760472a11112d2591b6b4/687474703a2f2f72696e6e65676174616d616e74652e69742f7965732e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></td>
 							</tr>
 							<tr>
-								<th><div class="roleplate" style="background-color: black;">Guest</div></th>
-								<th><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></th>
-								<th><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></th>
+								<td><div class="roleplate" style="background-color: black;">Guest</div></td>
+								<td><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></td>
+								<td><img src="https://camo.githubusercontent.com/2fe9081a34600997af00e465cd913d76ca7f0ff8/687474703a2f2f72696e6e65676174616d616e74652e69742f6e6f2e706e67" /></td>
 							</tr>
 						</tbody>
 					</table>

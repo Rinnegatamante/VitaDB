@@ -31,6 +31,12 @@
 							<input type="text" ng-model="conf.date" class="form-control" placeholder="Release Date" required="true" />
 						</div>
 						<div class="form-group">
+							<input type="text" ng-model="conf.source" class="form-control" placeholder="Sourcecode Link" />
+						</div>
+						<div class="form-group">
+							<input type="text" ng-model="conf.release_page" class="form-control" placeholder="Release Page Link" />
+						</div>
+						<div class="form-group">
 							<input type="text" id="sshot" ng-model="conf.sshot" class="form-control" placeholder="Screenshots Data" />
 						</div>
 						<input type="text" id="email" style="height:0;width:0;padding:0;border:none;" ng-model="conf.user" />

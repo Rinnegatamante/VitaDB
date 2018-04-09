@@ -11,10 +11,8 @@
 				<span ng-repeat="entry in updates"><span ng-if="$index != 0"> - </span><b>{{entry.author}}</b> {{entry.object}} <b>{{entry.hb}}</b> on <b>{{entry.date}} GMT -1:00</b>.</span>
 			</div>
 		</ol>
-		<ol class="breadcrumb" style="background-color: beige;">
-			<li>
-				<b>Note:</b> You can now download homebrews from VitaDB directly from your PSVITA by using <a href="http://vitadb.rinnegatamante.it/#/info/205">Vita Homebrew Browser</a> by <a href="#/user/devnoname120">devnoname120</a>.
-			</li>
+		<ol class="breadcrumb-alert">
+			<b>Note:</b> You can now download homebrews from VitaDB directly from your PSVITA by using <a href="http://vitadb.rinnegatamante.it/#/info/205">Vita Homebrew Browser</a> by <a href="#/user/devnoname120">devnoname120</a>.
 		</ol>
 	</div>
 	<br>

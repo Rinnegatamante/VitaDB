@@ -16,13 +16,10 @@
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 		<link href="templates/lumino/css/bootstrap.min.css" rel="stylesheet">
 		<link href="templates/lumino/css/datepicker3.css" rel="stylesheet">
-		<link href="templates/lumino/css/styles.css" rel="stylesheet">
 		<link href="js/dependencies/alertify.js-master/dist/css/alertify.css" rel="stylesheet" id="alertifyCSS">
 		<link href="css/font-awesome/css/fontawesome-all.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="js/dependencies/tooltipster-master/dist/css/tooltipster.bundle.min.css" />
 		<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
-		<link href="css/style.css" rel="stylesheet">
-		<link href="css/vitadb.css" rel="stylesheet">
 		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 		<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
@@ -38,6 +35,7 @@
 		<script src="node_modules/angular-animate/angular-animate.min.js"></script>
 		<script src="node_modules/angular-file-upload/dist/angular-file-upload.min.js"></script>
 		<script src="https://code.angularjs.org/1.5.8/angular-animate.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.8/angular-css.min.js"></script>
 		<script src="node_modules/js-md5/build/md5.min.js"></script>
 		<script src="templates/lumino/js/lumino.glyphs.js"></script>
 		<script src="templates/lumino/js/jquery-1.11.1.min.js"></script>
@@ -87,7 +85,7 @@
 									<a href="#profile">
 										<svg class="glyph stroked male user ">
 											<use xlink:href="#stroked-male-user"/>
-										</svg>
+										</svg>		
 										Profile
 									</a>
 								</li>

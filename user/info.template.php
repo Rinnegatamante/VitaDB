@@ -40,13 +40,13 @@
 							</thead>
 							<tbody>
 								<tr ng-repeat="brew in conf.hbs">
-									<th><a href="#/info/{{brew.id}}"><img class="icon" src="https://rinnegatamante.it/vitadb/icons/{{brew.icon}}" style="max-width: 64px;" /></a></th>
-									<th><a href="#/info/{{brew.id}}">{{brew.name}} {{brew.version}}</a></th>
-									<th>{{brew.date}}</th>
-									<th>
+									<td><a href="#/info/{{brew.id}}"><img class="icon" src="https://rinnegatamante.it/vitadb/icons/{{brew.icon}}" style="max-width: 64px;" /></a></td>
+									<td><a href="#/info/{{brew.id}}">{{brew.name}} {{brew.version}}</a></td>
+									<td>{{brew.date}}</td>
+									<td>
 										<a href="{{brew.url}}"><input type="submit" value="Download VPK" class="btn btn-primary" /></a>
 										<a href="{{brew.data}}" ng-if="brew.data.length > 0"><br><input type="submit" value="Download Data Files" class="btn btn-primary" /></a>
-									</th>
+									</td>
 								</tr>
 							</tbody>
 						</table>
@@ -67,11 +67,11 @@
 							</thead>
 							<tbody>
 								<tr ng-repeat="brew in conf.plugins">
-									<th><a href="#/info/{{brew.id}}">{{brew.name}} {{brew.version}}</a></th>
-									<th>{{brew.date}}</th>
-									<th>
+									<td><a href="#/info/{{brew.id}}">{{brew.name}} {{brew.version}}</a></td>
+									<td>{{brew.date}}</td>
+									<td>
 										<a href="{{brew.url}}"><input type="submit" value="Download Plugin" class="btn btn-primary" /></a>
-									</th>
+									</td>
 								</tr>
 							</tbody>
 						</table>
@@ -91,11 +91,11 @@
 							</thead>
 							<tbody>
 								<tr ng-repeat="brew in conf.tools">
-									<th><a href="#/info/{{brew.id}}">{{brew.name}} {{brew.version}}</a></th>
-									<th>{{brew.date}}</th>
-									<th>
+									<td><a href="#/info/{{brew.id}}">{{brew.name}} {{brew.version}}</a></td>
+									<td>{{brew.date}}</td>
+									<td>
 										<a href="{{brew.url}}"><input type="submit" value="Download Tool" class="btn btn-primary" /></a>
-									</th>
+									</td>
 								</tr>
 							</tbody>
 						</table>

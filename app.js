@@ -1,4 +1,4 @@
-var app = angular.module('VitaDB', ['ngRoute', 'ngAnimate', 'angularFileUpload', 'angular-marquee'])
+var app = angular.module('VitaDB', ['ngRoute', 'ngAnimate', 'angularFileUpload', 'angular-marquee', 'angularCSS'])
 
 app.run(function ($http, $rootScope, $location){
 	if (localStorage.getItem('id') && localStorage.getItem('token')) {
@@ -7,8 +7,12 @@ app.run(function ($http, $rootScope, $location){
 		$rootScope.user.password = localStorage.getItem('token');
 		$rootScope.user.name = localStorage.getItem('name');
 		$rootScope.user.role = localStorage.getItem('role');
+		$rootScope.theme = localStorage.getItem('theme');
+	}else{
+		$rootScope.theme = "Default";
 	}
 })
+
 app.factory('HttpInterceptorMessage', ['$q', '$location', '$rootScope', function ($q, $location, $rootScope) {
 	return {
 		
@@ -110,6 +114,5 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
 		.when('/profile', {
 			templateUrl: 'user/profile.template.php'
 		})
-		
 		$httpProvider.interceptors.push('HttpInterceptorMessage')
 }])

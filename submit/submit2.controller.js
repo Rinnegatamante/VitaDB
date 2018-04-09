@@ -1,4 +1,12 @@
-app.controller('submit2Controller',function($scope, $rootScope, $http, $location){
+app.controller('submit2Controller',function($scope, $rootScope, $http, $location, $css){
+	
+	$css.removeAll();
+	$css.add([
+		'templates/lumino/css/styles-' + $rootScope.theme + '.css',
+		'css/style-' + $rootScope.theme + '.css',
+		'css/vitadb-' + $rootScope.theme + '.css',
+	]);
+	
 	$scope.conf = {}
 	$scope.conf.sshot = ""
 	$scope.conf.user = $rootScope.user.email

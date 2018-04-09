@@ -1,5 +1,11 @@
-// Controller for login template
-app.controller('loginController',function($rootScope, $scope, $http, $location){
+app.controller('loginController',function($rootScope, $scope, $http, $location, $css){
+	
+	$css.removeAll();
+	$css.add([
+		'templates/lumino/css/styles-' + $rootScope.theme + '.css',
+		'css/style-' + $rootScope.theme + '.css',
+		'css/vitadb-' + $rootScope.theme + '.css',
+	]);
 	
 	// submit function, execute an user login
 	$scope.submit = function () {
@@ -20,11 +26,13 @@ app.controller('loginController',function($rootScope, $scope, $http, $location){
 					localStorage.setItem('token', $rootScope.user.password)
 					localStorage.setItem('name', $rootScope.user.name)
 					localStorage.setItem('role', $rootScope.user.role)
+					localStorage.setItem('theme', $rootScope.theme)
 				} else {
 					localStorage.removeItem('id')
 					localStorage.removeItem('token')
 					localStorage.removeItem('name')
 					localStorage.removeItem('role')
+					localStorage.removeItem('theme')
 				}
 			}else alertify.error('User not found.')
 		})

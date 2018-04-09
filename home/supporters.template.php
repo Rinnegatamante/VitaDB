@@ -7,7 +7,7 @@
 			<center><h4>This is the full list of Patreon supporters. Thank you all for your contributions!</h4></center>
 			<center><h6>If you want to support this project, <a href="https://www.patreon.com/Rinnegatamante">become a Patron!</a></h6></center>
 			<br>
-			<div class="row no-padding">
+			<div class="fixed-table-container">
 				<table data-toggle="table" class="table table-hover">
 					<thead>
 						<tr>
@@ -18,9 +18,9 @@
 					</thead>
 					<tbody>
 						<tr ng-repeat="sup in users">
-							<th><a href="#/user/{{sup.name}}"><img class="icon" src="https://rinnegatamante.it/vitadb/avatars/{{sup.avatar}}" style="max-width: 64px;" /></a></th>
-							<th><a href="#/user/{{sup.name}}">{{sup.name}}</a></th>
-							<th>{{sup.supporter_date}}</th>
+							<td><a href="#/user/{{sup.name}}"><img class="icon" src="https://rinnegatamante.it/vitadb/avatars/{{sup.avatar}}" style="max-width: 64px;" /></a></td>
+							<td><a href="#/user/{{sup.name}}">{{sup.name}}</a></td>
+							<td>{{sup.supporter_date}}</td>
 						</tr>
 					</tbody>
 				</table>

@@ -1,4 +1,11 @@
-app.controller('editController',function($scope, $rootScope, $http, $location, $routeParams){
+app.controller('editController',function($scope, $rootScope, $http, $location, $routeParams, $css){
+	
+	$css.removeAll();
+	$css.add([
+		'templates/lumino/css/styles-' + $rootScope.theme + '.css',
+		'css/style-' + $rootScope.theme + '.css',
+		'css/vitadb-' + $rootScope.theme + '.css',
+	]);
 	
 	if (typeof($rootScope) == 'undefined' || $rootScope.user == undefined || $rootScope.user.role > 3) $location.path("/");
 	$scope.conf = {}

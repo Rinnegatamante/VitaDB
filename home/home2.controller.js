@@ -1,4 +1,12 @@
-app.controller('home2Controller',function($scope, $http, $routeParams, $location, $anchorScroll){
+app.controller('home2Controller',function($scope, $rootScope, $http, $routeParams, $location, $anchorScroll, $css){
+	
+	$css.removeAll();
+	$css.add([
+		'templates/lumino/css/styles-' + $rootScope.theme + '.css',
+		'css/style-' + $rootScope.theme + '.css',
+		'css/vitadb-' + $rootScope.theme + '.css',
+	]);
+	
 	$scope.field = ''
 
 	$http.post('list_plugins_json.php').then(function(res){

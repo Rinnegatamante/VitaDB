@@ -1,4 +1,12 @@
-app.controller('homeController',function ($scope, $http, $routeParams, $location, $anchorScroll){
+app.controller('homeController',function ($scope, $rootScope, $http, $routeParams, $location, $anchorScroll, $css){
+	
+	$css.removeAll();
+	$css.add([
+		'templates/lumino/css/styles-' + $rootScope.theme + '.css',
+		'css/style-' + $rootScope.theme + '.css',
+		'css/vitadb-' + $rootScope.theme + '.css',
+	]);
+	
 	$scope.field = ''
 	$scope.cat_filter = "0"
 	$scope.updates = []

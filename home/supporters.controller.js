@@ -1,4 +1,12 @@
-app.controller('supporterController',function ($scope, $http, $routeParams, $location, $anchorScroll){
+app.controller('supporterController',function ($scope, $rootScope, $http, $routeParams, $location, $anchorScroll, $css){
+	
+	$css.removeAll();
+	$css.add([
+		'templates/lumino/css/styles-' + $rootScope.theme + '.css',
+		'css/style-' + $rootScope.theme + '.css',
+		'css/vitadb-' + $rootScope.theme + '.css',
+	]);
+	
 	$scope.users = {}
 	$http.post('get_supporters.php').then(function(res){
 		for (i=0;i<res.data.length;i++){
