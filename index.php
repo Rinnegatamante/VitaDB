@@ -201,11 +201,7 @@
 		</div>
 		<div ng-view class="slide page"></div>
 		<script src="templates/lumino/js/bootstrap.min.js"></script>
-		<script src="templates/lumino/js/chart.min.js"></script>
-		<script src="templates/lumino/js/chart-data.js"></script>
-		<script src="templates/lumino/js/easypiechart.js"></script>
 		<script src="templates/lumino/js/bootstrap-datepicker.js"></script>
-		<script src="templates/lumino/js/easypiechart-data.js"></script>
 		<script src="js/dependencies/tooltipster-master/dist/js/tooltipster.bundle.min.js"></script>
 	</body>
 </html>
