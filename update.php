@@ -1,5 +1,4 @@
 <?php
-
 	// Getting POST data, performing some security checks
 	$postdata = file_get_contents("php://input");
 	$request = json_decode($postdata);
@@ -40,6 +39,7 @@
 	$tid2 = addslashes($request->titleid);
 	if ($tid != $tid2) die("Invalid title ID");
 	$id = $request->id;
+	$hb_id = $id;
 	$id2 = addslashes($request->id);
 	if ($id != $id2) die("Invalid ID");
 	$description = $request->description;
@@ -88,6 +88,34 @@
 			mysqli_stmt_bind_param($sth3, "ssss", $log_author, $obj, $name, $date);
 			mysqli_stmt_execute($sth3);
 			mysqli_stmt_close($sth3);
+			require_once ('codebird.php');
+			\Codebird\Codebird::setConsumerKey('', '');
+			$cb = \Codebird\Codebird::getInstance();
+			$cb->setToken('', '');
+			if (strlen($sshot) > 5){
+				$screenshots = explode(';', $sshot);
+				$cb->setRemoteDownloadTimeout(10000);
+				foreach ($screenshots as $screenshot) {
+					$sshot_url = "https://vitadb.rinnegatamante.it/" . $screenshot;
+					$reply = $cb->media_upload(array(
+						'media' => $sshot_url
+					));
+					$media_ids[] = $reply->media_id_string;
+				}
+				$media_ids = implode(',', $media_ids);
+				$tweet_text = "$name $version by $author can now be downloaded from VitaDB or VHBB! More info is available here: https://vitadb.rinnegatamante.it/#/info/$hb_id";
+				$reply = $cb->statuses_update([
+					'status' => $tweet_text,
+					'media_ids' => $media_ids
+				]);
+				print_r($reply);
+			} else {
+				$tweet_text = "$name $version by $author can now be downloaded from VitaDB or VHBB! More info is available here: https://vitadb.rinnegatamante.it/#/info/$hb_id";
+				$reply = $cb->statuses_update([
+					'status' => $tweet_text
+				]);
+				print_r($reply);
+			}
 		}
 	} else {		
 		mysqli_stmt_close($sth);
