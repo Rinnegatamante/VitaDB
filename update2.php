@@ -77,9 +77,6 @@
 			mysqli_stmt_bind_param($sth3, "ssss", $log_author, $obj, $name, $date);
 			mysqli_stmt_execute($sth3);
 			mysqli_stmt_close($sth3);
-			$sth4 = mysqli_query($con,"SELECT MAX(id) AS id FROM vitadb");
-			$row = mysql_fetch_array($sth4);
-			$hb_id = $row['id'];
 			mysqli_stmt_bind_param($sth3, "ssss", $log_author, $obj, $name, $date);
 			mysqli_stmt_execute($sth3);
 			mysqli_stmt_close($sth3);

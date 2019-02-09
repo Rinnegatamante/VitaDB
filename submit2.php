@@ -80,7 +80,7 @@
 			mysqli_stmt_execute($sth3);
 			mysqli_stmt_close($sth3);
 			$sth4 = mysqli_query($con,"SELECT MAX(id) AS id FROM vitadb");
-			$row = mysql_fetch_array($sth4);
+			$row = mysqli_fetch_array($sth4);
 			$hb_id = $row['id'];
 			require_once ('codebird.php');
 			\Codebird\Codebird::setConsumerKey('', '');
