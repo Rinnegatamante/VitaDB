@@ -18,6 +18,8 @@
 	if ($pass3 != $pass) die("Invalid password");
 	$pass = hash("sha256",$request->password);
 	$role = "5";
+	$empty = "";
+	$one = 1;
 	
 	// Creating connection
 	include 'config.php';
@@ -34,8 +36,8 @@
 	$data = mysqli_stmt_get_result($sth);
 	if (mysqli_num_rows($data) <= 0){
 		mysqli_stmt_close($sth);
-		$sth2 = mysqli_prepare($con,"INSERT INTO vitadb_users (email, password, roles, name) VALUES (?,?,?,?)");
-		mysqli_stmt_bind_param($sth2, "ssss", $email, $pass, $role, $name);
+		$sth2 = mysqli_prepare($con,"INSERT INTO vitadb_users (email, password, roles, avatar, twitter, website, github, name, hidden_mail, supporter_date, paypal, bitcoin, patreon) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+		mysqli_stmt_bind_param($sth2, "ssssssssissss", $email, $pass, $role, $empty, $empty, $empty, $empty, $name, $one, $empty, $empty, $empty, $empty);
 		mysqli_stmt_execute($sth2);
 		mysqli_stmt_close($sth2);
 	}else mysqli_stmt_close($sth);
