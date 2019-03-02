@@ -26,25 +26,32 @@
 	
 	if (mysqli_num_rows($data)>0){
 
-		$uploaddir = '/customers/8/5/0/rinnegatamante.it/httpd.www/vitadb/icons/';
-		$fname = hash("sha256",rand() . basename($_FILES['icon']['name']) . rand() . rand());
-		$uploadfile = $uploaddir . $fname . ".png";
-
-		$info = getimagesize($_FILES['icon']['tmp_name']);
-		if (strcmp($info[0],"128")!=0) die("Wrong size");
-		if (strcmp($info[1],"128")!=0) die("Wrong size");
-
-		echo '<pre>';
-		if (move_uploaded_file($_FILES['icon']['tmp_name'], $uploadfile)) {
-			echo "<div id='icon_url'>" . $fname . ".png" . "</div>";
-		}else{
-			echo "An error occurred during the upload.";
+		while($r = mysqli_fetch_assoc($data)) {
+			$roles = explode(";",$r['roles']);	
 		}
+		mysqli_stmt_close($sth);
+		if ((strcmp($roles[0],"1") == 0) or (strcmp($roles[0],"2") == 0) or (strcmp($roles[0],"3") == 0)){
+			$uploaddir = '/customers/8/5/0/rinnegatamante.it/httpd.www/vitadb/icons/';
+			$fname = hash("sha256",rand() . basename($_FILES['icon']['name']) . rand() . rand());
+			$uploadfile = $uploaddir . $fname . ".png";
 
-		echo "</pre>";
+			$info = getimagesize($_FILES['icon']['tmp_name']);
+			if (strcmp($info[0],"128")!=0) die("Wrong size");
+			if (strcmp($info[1],"128")!=0) die("Wrong size");
+
+			echo '<pre>';
+			if (move_uploaded_file($_FILES['icon']['tmp_name'], $uploadfile)) {
+				echo "<div id='icon_url'>" . $fname . ".png" . "</div>";
+			}else{
+				echo "An error occurred during the upload.";
+			}
+
+			echo "</pre>";
+		}else{
+			echo "You don't have the correct privileges to perform this action.";
+		}
 	}
 	
-	mysqli_stmt_close($sth);
 	mysqli_close($con);
 
 ?>
