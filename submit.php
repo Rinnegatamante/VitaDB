@@ -88,13 +88,40 @@
 			mysqli_stmt_bind_param($sth3, "ssss", $log_author, $obj, $name, $date);
 			mysqli_stmt_execute($sth3);
 			mysqli_stmt_close($sth3);
-			$sth4 = mysqli_query($con,"SELECT MAX(id) AS id FROM vitadb");
-			$row = mysql_fetch_array($sth4);
-			$hb_id = $row['id'];
+			$sth4 = mysqli_query($con,"SELECT MAX(id) AS max_id FROM vitadb");
+			$row = mysqli_fetch_array($sth4);
+			$hb_id = $row['max_id'];
 			require_once ('codebird.php');
 			\Codebird\Codebird::setConsumerKey('', '');
 			$cb = \Codebird\Codebird::getInstance();
 			$cb->setToken('', '');
+			$authors = explode(' & ', $author);
+			$author = "";
+			$first = 1;
+			foreach ($authors as $person) {
+				if ($first != 1) {
+					$author = $author . " & ";
+				} else {
+					$first = 2;
+				}
+				$sth4 = mysqli_prepare($con,"SELECT twitter FROM vitadb_users WHERE name=?");
+				mysqli_stmt_bind_param($sth4, "s", $person);
+				mysqli_stmt_execute($sth4);
+				$data = mysqli_stmt_get_result($sth4);
+				if (mysqli_num_rows($data)>0){
+					while($r = mysqli_fetch_assoc($data)) {
+						$twitter = $r['twitter'];
+						if (strlen($twitter) > 2) {
+							$author = $author . "@" . $twitter;
+						} else {
+							$author = $author . $person;
+						}
+					}
+				} else {
+					$author = $author . $person;
+				}
+				mysqli_stmt_close($sth4);
+			}
 			if (strlen($sshot) > 5){
 				$screenshots = explode(';', $sshot);
 				$cb->setRemoteDownloadTimeout(10000);
