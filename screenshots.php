@@ -30,7 +30,7 @@
 			$roles = explode(";",$r['roles']);	
 		}
 		mysqli_stmt_close($sth);
-		if ((strcmp($roles[0],"1") == 0) or (strcmp($roles[0],"2") == 0)){
+		if ((strcmp($roles[0],"1") == 0) or (strcmp($roles[0],"2") == 0) or (strcmp($roles[0],"3") == 0)){
 			$uploaddir = '/customers/8/5/0/rinnegatamante.it/httpd.www/vitadb/screenshots/';
 			$file_count = count($_FILES['sshots']['name']);
 			$i = 0;
