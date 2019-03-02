@@ -10,7 +10,7 @@
 				<form role="form" ng-submit="submit()">
 					<fieldset>
 						<div class="form-group">
-							<input type="text" ng-model="conf.name" class="form-control" placeholder="Homebrew Name" required="true" />
+							<input type="text" id="hb_title" ng-model="conf.name" class="form-control" placeholder="Homebrew Name" required="true" />
 						</div>
 						<div class="form-group">
 							<input type="text" ng-model="conf.version" class="form-control" placeholder="Homebrew Version" required="true" />
@@ -25,7 +25,7 @@
 							<textarea style="resize: vertical;" ng-model="conf.long_description" class="form-control" placeholder="Homebrew Long Description (Optional)"></textarea>
 						</div>
 						<div class="form-group" ng-if="conf.type < 8">
-							<input type="text" ng-model="conf.icon" class="form-control" placeholder="Homebrew Icon Name" required="true" />
+							<input type="text" id="url" ng-model="conf.icon" class="form-control" placeholder="Homebrew Icon Name" required="true" />
 						</div>
 						<div class="form-group">
 							<input type="text" ng-model="conf.url" class="form-control" placeholder="Download Url" required="true" />
@@ -37,7 +37,7 @@
 							<input type="text" ng-model="conf.date" class="form-control" placeholder="Release Date" required="true" />
 						</div>
 						<div class="form-group" ng-if="conf.type < 8">
-							<input type="text" ng-model="conf.titleid" class="form-control" placeholder="Title ID" required="true" />
+							<input type="text" id="hb_titleid" ng-model="conf.titleid" class="form-control" placeholder="Title ID" required="true" />
 						</div>
 						<div class="form-group">
 							<input type="text" id="sshot" ng-model="conf.sshot" class="form-control" placeholder="Screenshots Data" />
@@ -58,6 +58,17 @@
 						<div class="form-group">
 							<input type="text" ng-model="conf.release_page" class="form-control" placeholder="Release Page Link" />
 						</div>
+						<div class="form-group">
+							<select ng-model="conf.new_release" required="true" class="form-control">
+								<option value=1>Push a new tweet release</option>
+								<option value=2>Don't push a new tweet release</option>
+							</select>
+						</div>
+						<input type="text" id="email" style="height:0;width:0;padding:0;border:none;" ng-model="conf.user" />
+						<input type="text" id="pass" style="height:0;width:0;padding:0;border:none;" ng-model="conf.password" />
+						<iframe scrolling="no" frameBorder="0" id="uploader" width="100%" height="80px" ng-src="{{conf.uploader}}" onload="document.getElementById('uploader').contentWindow.document.getElementById('email').value = document.getElementById('email').value;document.getElementById('uploader').contentWindow.document.getElementById('pass').value = document.getElementById('pass').value;document.getElementById('url').value = document.getElementById('uploader').contentWindow.document.getElementById('icon_url').innerHTML;"></iframe>
+						<iframe scrolling="no" frameBorder="0" id="uploader2" width="100%" height="80px" src="param.html" onload="document.getElementById('hb_title').value = document.getElementById('uploader2').contentWindow.document.getElementById('hb_title').innerHTML;document.getElementById('hb_titleid').value = document.getElementById('uploader2').contentWindow.document.getElementById('hb_titleid').innerHTML;"></iframe>
+						<iframe scrolling="no" frameBorder="0" id="uploader3" width="100%" height="250px" src="screenshots.html" onload="document.getElementById('uploader3').contentWindow.document.getElementById('email').value = document.getElementById('email').value;document.getElementById('uploader3').contentWindow.document.getElementById('pass').value = document.getElementById('pass').value;document.getElementById('sshot').value = document.getElementById('uploader3').contentWindow.document.getElementById('sshots_url').innerHTML;document.getElementById('sshot').value = document.getElementById('uploader3').contentWindow.document.getElementById('sshots_url').innerHTML;"></iframe>
 						<br>
 						<input type="submit" value="Submit edited content" class="btn btn-primary" />
 					</fieldset>
