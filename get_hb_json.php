@@ -26,8 +26,17 @@
 		// Downloads counter support
 		$masked_link = "https://vitadb.rinnegatamante.it/get_hb_link.php?id=" . $r['id'];
 		$r['url'] = $masked_link;
+		
+		// Redirect patch for when bintray is off
+		$data_link = $r['data'];
+		$data_link = str_replace("https://bintray.com/vitadb/VitaDB/download_file?file_path=",
+			"https://dl.coolatoms.org/vitadb/",
+			$data_link);
+		$data_link = str_replace("%2F", "/", $data_link);
+		unset($r['data']);
+		$r['data'] = $data_link;
+		
 		$rows[] = $r;
-	
 	}
 	echo json_encode($rows, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 

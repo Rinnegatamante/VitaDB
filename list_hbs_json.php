@@ -19,6 +19,15 @@
 			unset($r['url']);
 			$r['url'] = $masked_link;
 			
+			// Redirect patch for when bintray is off
+			$data = $r['data'];
+			$data = str_replace("https://bintray.com/vitadb/VitaDB/download_file?file_path=",
+				"https://dl.coolatoms.org/vitadb/",
+				$data);
+			$data = str_replace("%2F", "/", $data);
+			unset($r['data']);
+			$r['data'] = $data;
+			
 			$rows[] = $r;
 		}
 		
