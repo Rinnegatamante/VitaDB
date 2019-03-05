@@ -33,6 +33,7 @@
 			"https://dl.coolatoms.org/vitadb/",
 			$data_link);
 		$data_link = str_replace("%2F", "/", $data_link);
+		$data_link = str_replace("+", " ", $data_link);
 		unset($r['data']);
 		$r['data'] = $data_link;
 		

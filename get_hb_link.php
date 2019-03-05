@@ -134,7 +134,9 @@
 		$url = str_replace("https://bintray.com/vitadb/VitaDB/download_file?file_path=",
 			"https://dl.coolatoms.org/vitadb/",
 			$url);
+		$url = str_replace("+", " ", $url);
 		$url = str_replace("%2F", "/", $url);
+		
 		header("location: " . $url);
 	}
 ?>
