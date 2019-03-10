@@ -1,4 +1,4 @@
-<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" ng-controller="home3Controller">
+<div class="col-xs-12 col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" ng-controller="home3Controller">
 	<div class="row" id="top">
 		<ol class="breadcrumb">
 			<li>
