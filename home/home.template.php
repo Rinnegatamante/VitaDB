@@ -28,8 +28,6 @@
 				<option value=2>Game Ports</option>
 				<option value=4>Utilities</option>
 				<option value=5>Emulators</option>
-				<option value=7>Engines</option>
-				<option value=3>Interpreters</option>
 			</select>
 		</div>
 	</div>

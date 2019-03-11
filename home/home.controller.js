@@ -36,12 +36,6 @@ app.controller('homeController',function ($scope, $rootScope, $http, $routeParam
 				case 5:
 					$scope.brews[i].genre = "Emulator"
 					break;
-				case 7:
-					$scope.brews[i].genre = "Engine"
-					break;
-				case 3:
-					$scope.brews[i].genre = "Interpreter"
-					break;
 				default:
 					$scope.brews[i].genre = "Unknown"
 					break;

@@ -54,8 +54,6 @@
 								<option value=2>Game Port</option>
 								<option value=4>Utility</option>
 								<option value=5>Emulator</option>
-								<option value=7>Engine</option>
-								<option value=3>Interpreter</option>
 							</select>
 						</div>
 						<input type="text" id="email" style="height:0;width:0;padding:0;border:none;" ng-model="conf.user" />
