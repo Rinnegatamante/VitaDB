@@ -124,14 +124,14 @@
 					$media_ids[] = $reply->media_id_string;
 				}
 				$media_ids = implode(',', $media_ids);
-				$tweet_text = "$name $version by $author can now be downloaded from VitaDB or VHBB! More info is available here: https://vitadb.rinnegatamante.it/#/info/$hb_id";
+				$tweet_text = "$name $version by $author can now be downloaded from VitaDB or Easy Plugin! More info is available here: https://vitadb.rinnegatamante.it/#/info/$hb_id";
 				$reply = $cb->statuses_update([
 					'status' => $tweet_text,
 					'media_ids' => $media_ids
 				]);
 				print_r($reply);
 			} else {
-				$tweet_text = "$name $version by $author can now be downloaded from VitaDB or VHBB! More info is available here: https://vitadb.rinnegatamante.it/#/info/$hb_id";
+				$tweet_text = "$name $version by $author can now be downloaded from VitaDB or Easy Plugin! More info is available here: https://vitadb.rinnegatamante.it/#/info/$hb_id";
 				$reply = $cb->statuses_update([
 					'status' => $tweet_text
 				]);

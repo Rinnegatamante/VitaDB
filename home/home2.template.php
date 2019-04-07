@@ -11,6 +11,9 @@
 				<span ng-repeat="entry in updates"><span ng-if="$index != 0"> - </span><b>{{entry.author}}</b> {{entry.object}} <b>{{entry.hb}}</b> on <b>{{entry.date}} GMT -1:00</b>.</span>
 			</div>
 		</ol>
+		<ol class="breadcrumb-alert">
+			<b>Note:</b> You can now download plugins from VitaDB directly from your PSVITA by using <a href="http://vitadb.rinnegatamante.it/#/info/440">Easy Plugin</a> by <a href="#/user/THEN00P">THEN00P</a>.
+		</ol>
 	</div>
 	<br>
 	<div class="row">
