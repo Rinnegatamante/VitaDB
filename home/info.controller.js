@@ -21,7 +21,11 @@ app.controller('infoController',function ($scope, $rootScope, $http, $routeParam
 		if ($scope.conf.trailer) {
 			$scope.conf.youtube = $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + $scope.conf.trailer)
 		}
-		$scope.conf.multimedia_tab = 0
+		if ($scope.conf.screenshots) {
+			$scope.conf.multimedia_tab = 0
+		} else {
+			$scope.conf.multimedia_tab = 1
+		}
 		names = []
 		var i = 0
 		while (i < $scope.conf.authors.length){
