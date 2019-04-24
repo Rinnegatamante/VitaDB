@@ -42,7 +42,7 @@
 													</thead>
 													<tbody>
 														<tr ng-repeat="brew in value">
-														<td><a href="#/user/{{brew.name}}">{{brew.name}}</a></td>
+														<td><a href="#/info/{{brew.id}}">{{brew.name}}</a></td>
 														<td><span ng-repeat="author in brew.authors">{{ ($first) ? '' : ' & ' }}<a href="#/user/{{author}}">{{author}}</a></td>
 														</tr>
 													</tbody>
