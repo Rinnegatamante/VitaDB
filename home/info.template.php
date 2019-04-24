@@ -87,10 +87,10 @@
 								</thead>
 							</table>
 							<div ng-if="conf.screenshots && conf.multimedia_tab <= 0" gallery="" images="conf.sshots"></div>
-							<div class="container" ng-if="conf.trailer && conf.multimedia_tab >= 1">
-								<div class="gallery-image">
+							<div class="iframe-container" ng-if="conf.trailer && conf.multimedia_tab >= 1">
+								<div class="iframe-box">
 									<center>
-										<iframe width="100%" height="544px" ng-src="{{conf.youtube}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+										<iframe width="2" height="2" ng-src="{{conf.youtube}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 									</center>
 								</div>
 							</div>
