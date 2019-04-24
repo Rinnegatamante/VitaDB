@@ -37,6 +37,7 @@
 	if (strlen($sshot) < 5) $sshot = "";
 	$source = $request->source;
 	$release_page = $request->release_page;
+	$trailer = $request->trailer;
 	$new_release = $request->new_release;
 	$new_release2 = addslashes($request->new_release);
 	if ($new_release != $new_release2) die("Invalid twitter option");
@@ -70,8 +71,8 @@
 		}
 		mysqli_stmt_close($sth);
 		if ((strcmp($roles[0],"1") == 0) or (strcmp($roles[0],"2") == 0) or (strcmp($roles[0],"3") == 0)){
-			$sth2 = mysqli_prepare($con,"UPDATE vitadb SET name=?,version=?,author=?,url=?,description=?,date=?,long_description=?,screenshots=?,source=?,release_page=? WHERE id=?");
-			mysqli_stmt_bind_param($sth2, "ssssssssssi", $name, $version, $author, $url, $description, $day, $long_description, $sshot, $source, $release_page, $id);
+			$sth2 = mysqli_prepare($con,"UPDATE vitadb SET name=?,version=?,author=?,url=?,description=?,date=?,long_description=?,screenshots=?,source=?,release_page=?,trailer=? WHERE id=?");
+			mysqli_stmt_bind_param($sth2, "sssssssssssi", $name, $version, $author, $url, $description, $day, $long_description, $sshot, $source, $release_page, $trailer, $id);
 			mysqli_stmt_execute($sth2);
 			mysqli_stmt_close($sth2);
 			$sth3 = mysqli_prepare($con,"INSERT INTO vitadb_log(author,object,hb,date) VALUES(?,?,?,?)");

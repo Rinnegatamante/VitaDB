@@ -63,9 +63,38 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<h4>Screenshots: </h4>
-							<div ng-if="conf.screenshots" gallery="" images="conf.sshots"></div>
-							<span ng-if="!conf.screenshots">No screenshots available.</span>
+							<h4>Multimedia: </h4>
+							<table ng-if="conf.screenshots || conf.trailer" data-toggle="table" class="table table-hover">
+								<thead>
+									<tr>
+										<td ng-if="conf.screenshots">
+											<a href="" ng-if="conf.multimedia_tab == 0" ng-click="conf.multimedia_tab = 0">
+												<b>Screenshots</b>
+											</a>
+											<a href="" ng-if="conf.multimedia_tab == 1" ng-click="conf.multimedia_tab = 0">
+												Screenshots
+											</a>
+										</td>
+										<td ng-if="conf.trailer" width=100%>
+											<a href="" ng-if="conf.multimedia_tab == 1" ng-click="conf.multimedia_tab = 1">
+												<b>Video</b>
+											</a>
+											<a href="" ng-if="conf.multimedia_tab == 0" ng-click="conf.multimedia_tab = 1">
+												Video
+											</a>
+										</td>
+									</tr>
+								</thead>
+							</table>
+							<div ng-if="conf.screenshots && conf.multimedia_tab <= 0" gallery="" images="conf.sshots"></div>
+							<div class="container" ng-if="conf.trailer && conf.multimedia_tab >= 1">
+								<div class="gallery-image">
+									<center>
+										<iframe width="100%" height="544px" ng-src="{{conf.youtube}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+									</center>
+								</div>
+							</div>
+							<span ng-if="!conf.screenshots && !conf.trailer">No screenshots or video available.</span>
 						</div>
 						<br>
 						<a href="{{conf.url}}" ng-if="conf.type < 8"><input type="submit" value="Download VPK" class="btn btn-primary" /></a>

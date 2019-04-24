@@ -46,6 +46,9 @@
 							<input type="text" ng-model="conf.release_page" class="form-control" placeholder="Release Page Link" />
 						</div>
 						<div class="form-group">
+							<input type="text" ng-model="conf.trailer" class="form-control" placeholder="Video Link (YouTube)" />
+						</div>
+						<div class="form-group">
 							<input type="text" id="sshot" ng-model="conf.sshot" class="form-control" placeholder="Screenshots Data" />
 						</div>
 						<div class="form-group">

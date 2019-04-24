@@ -16,7 +16,7 @@
 		die("Connection failed: " . mysqli_connect_error());
 	} 
 	
-	$sth = mysqli_prepare($con,"SELECT name,icon,version,author,type,description,id,data,date,titleid,screenshots,long_description,downloads,source,release_page FROM vitadb WHERE id=?");
+	$sth = mysqli_prepare($con,"SELECT name,icon,version,author,type,description,id,data,date,titleid,screenshots,long_description,downloads,source,release_page,trailer FROM vitadb WHERE id=?");
 	mysqli_stmt_bind_param($sth, "i", $id);
 	mysqli_stmt_execute($sth);
 	$data = mysqli_stmt_get_result($sth);
@@ -28,14 +28,14 @@
 		$r['url'] = $masked_link;
 		
 		// Redirect patch for when bintray is off
-		$data_link = $r['data'];
+		/*$data_link = $r['data'];
 		$data_link = str_replace("https://bintray.com/vitadb/VitaDB/download_file?file_path=",
 			"https://dl.coolatoms.org/vitadb/",
 			$data_link);
 		$data_link = str_replace("%2F", "/", $data_link);
 		$data_link = str_replace("+", " ", $data_link);
 		unset($r['data']);
-		$r['data'] = $data_link;
+		$r['data'] = $data_link;*/
 		
 		$rows[] = $r;
 	}

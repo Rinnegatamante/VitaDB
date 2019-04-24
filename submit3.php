@@ -34,6 +34,8 @@
 	if (strlen($sshot) < 5) $sshot = "";
 	$source = $request->source;
 	$release_page = $request->release_page;
+	$trailer = $request->trailer;
+	if (strlen($trailer) < 5) $trailer = "";
 	$icon = "";
 	$url3 = "";
 	$titleid = "";
@@ -67,8 +69,8 @@
 		}
 		mysqli_stmt_close($sth);
 		if ((strcmp($roles[0],"1") == 0) or (strcmp($roles[0],"2") == 0)){
-			$sth2 = mysqli_prepare($con,"INSERT INTO vitadb (name, icon, version, author, url, type, description, data, date, titleid, long_description, screenshots, source, release_page) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-			mysqli_stmt_bind_param($sth2, "sssssissssssss", $name, $icon, $version, $author, $url, $type, $description, $url3, $day, $titleid, $long_description, $sshot, $source, $release_page);
+			$sth2 = mysqli_prepare($con,"INSERT INTO vitadb (name, icon, version, author, url, type, description, data, date, titleid, long_description, screenshots, source, release_page, trailer) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			mysqli_stmt_bind_param($sth2, "sssssissssssss", $name, $icon, $version, $author, $url, $type, $description, $url3, $day, $titleid, $long_description, $sshot, $source, $release_page, $trailer);
 			mysqli_stmt_execute($sth2);
 			mysqli_stmt_close($sth2);
 			$sth3 = mysqli_prepare($con,"INSERT INTO vitadb_log(author,object,hb,date) VALUES(?,?,?,?)");

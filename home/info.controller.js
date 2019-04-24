@@ -1,4 +1,4 @@
-app.controller('infoController',function ($scope, $rootScope, $http, $routeParams, $location, $anchorScroll, $css){
+app.controller('infoController',function ($scope, $rootScope, $http, $routeParams, $location, $anchorScroll, $css, $sce){
 	
 	$css.removeAll();
 	$css.add([
@@ -18,6 +18,10 @@ app.controller('infoController',function ($scope, $rootScope, $http, $routeParam
 		$scope.conf.sshots = res.data[0].screenshots.split(";")
 		$scope.conf.authors = $scope.conf.author.split(" & ")
 		$scope.conf.authors_info = []
+		if ($scope.conf.trailer) {
+			$scope.conf.youtube = $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + $scope.conf.trailer)
+		}
+		$scope.conf.multimedia_tab = 0
 		names = []
 		var i = 0
 		while (i < $scope.conf.authors.length){

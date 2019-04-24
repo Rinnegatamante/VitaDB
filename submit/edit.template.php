@@ -57,6 +57,9 @@
 							<input type="text" ng-model="conf.release_page" class="form-control" placeholder="Release Page Link" />
 						</div>
 						<div class="form-group">
+							<input type="text" ng-model="conf.trailer" class="form-control" placeholder="Video Link (YouTube)" />
+						</div>
+						<div class="form-group">
 							<select ng-model="conf.new_release" required="true" class="form-control">
 								<option value=1>Push a new tweet release</option>
 								<option value=2>Don't push a new tweet release</option>
