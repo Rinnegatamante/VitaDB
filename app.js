@@ -1,4 +1,4 @@
-var app = angular.module('VitaDB', ['ngRoute', 'ngAnimate', 'angularFileUpload', 'angular-marquee', 'angularCSS'])
+var app = angular.module('VitaDB', ['ngRoute', 'ngAnimate', 'angularFileUpload', 'angular-marquee', 'angularCSS', 'angular.filter'])
 
 app.run(function ($http, $rootScope, $location){
 	if (localStorage.getItem('id') && localStorage.getItem('token')) {
@@ -9,7 +9,7 @@ app.run(function ($http, $rootScope, $location){
 		$rootScope.user.role = localStorage.getItem('role');
 		$rootScope.theme = localStorage.getItem('theme');
 	}else{
-		$rootScope.theme = "Default";
+		$rootScope.theme = "Dark";
 	}
 })
 
@@ -113,6 +113,9 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
 		})
 		.when('/profile', {
 			templateUrl: 'user/profile.template.php'
+		})
+		.when('/titleids', {
+			templateUrl: 'home/titleslist.template.php'
 		})
 		$httpProvider.interceptors.push('HttpInterceptorMessage')
 }])

@@ -33,6 +33,7 @@
 		<script src="node_modules/angular/angular.min.js"></script>
 		<script src="node_modules/angular-route/angular-route.min.js"></script>
 		<script src="node_modules/angular-animate/angular-animate.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.17/angular-filter.min.js"></script>
 		<script src="node_modules/angular-file-upload/dist/angular-file-upload.min.js"></script>
 		<script src="https://code.angularjs.org/1.5.8/angular-animate.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.8/angular-css.min.js"></script>
@@ -46,6 +47,7 @@
 		<script src="home/home2.controller.js"></script>
 		<script src="home/home3.controller.js"></script>
 		<script src="home/api.controller.js"></script>
+		<script src="home/titleslist.controller.js"></script>
 		<script src="home/info.controller.js"></script>
 		<script src="home/staff.controller.js"></script>
 		<script src="home/supporters.controller.js"></script>
@@ -148,6 +150,12 @@
 					<a href="#/supporters">
 						<i class="fab fa-patreon" aria-hidden="true"></i> &nbsp;
 						Supporters
+					</a>
+				</li>
+				<li>
+					<a href="#/titleids">
+						<i class="fa fa-list" aria-hidden="true"></i> &nbsp;
+						Titles List
 					</a>
 				</li>
 				<li>
