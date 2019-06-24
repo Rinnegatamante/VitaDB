@@ -12,12 +12,26 @@ app.controller('infoController',function ($scope, $rootScope, $http, $routeParam
 		hid: $routeParams.hid,
 	}
 	
+	var sizes = ["Bytes", "KBs", "MBs", "GBs"]
+	
 	$http.post('get_hb_json.php', data).then(function(res){
 		$scope.conf = res.data[0]
 		$scope.conf.long_description = res.data[0].long_description
 		$scope.conf.sshots = res.data[0].screenshots.split(";")
 		$scope.conf.authors = $scope.conf.author.split(" & ")
 		$scope.conf.authors_info = []
+		var sizes_idx = 0
+		var data_sizes_idx = 0
+		while ($scope.conf.size > 1024) {
+			$scope.conf.size = $scope.conf.size / 1024;
+			sizes_idx++;
+		}
+		$scope.conf.size = $scope.conf.size.toFixed(2) + " " + sizes[sizes_idx]
+		while ($scope.conf.data_size > 1024) {
+			$scope.conf.data_size = $scope.conf.data_size / 1024;
+			data_sizes_idx++;
+		}
+		$scope.conf.data_size = $scope.conf.data_size.toFixed(2) + " " + sizes[data_sizes_idx]
 		if ($scope.conf.trailer) {
 			$scope.conf.youtube = $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + $scope.conf.trailer)
 		}

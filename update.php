@@ -82,8 +82,37 @@
 		}
 		mysqli_stmt_close($sth);
 		if ((strcmp($roles[0],"1") == 0) or (strcmp($roles[0],"2") == 0) or (strcmp($roles[0],"3") == 0)){
-			$sth2 = mysqli_prepare($con,"UPDATE vitadb SET name=?,icon=?,version=?,author=?,url=?,type=?,description=?,data=?,date=?,titleid=?,long_description=?,screenshots=?,source=?,release_page=?,trailer=? WHERE id=?");
-			mysqli_stmt_bind_param($sth2, "sssssisssssssssi", $name, $icon, $version, $author, $url, $type, $description, $url3, $day, $tid, $long_description, $sshot, $source, $release_page, $trailer, $id);
+			
+			stream_context_set_default(
+				array(
+					'http' => array(
+						'method' => 'HEAD'
+					)
+				)
+			);
+			$headers = get_headers($url, 1);
+			$content_length =  $headers['Content-Length'];
+			$size = 0;
+			$size2 = 0;
+
+			if (is_array($content_length)) {
+				$size = array_values(array_slice($content_length , -1))[0];
+			} else {
+				$size = $content_length;
+			}
+			
+			if (strlen($url3) > 2) {
+				$headers = get_headers($url3, 1);
+				$content_length =  $headers['Content-Length'];
+				if (is_array($content_length)) {
+					$size2 = array_values(array_slice($content_length , -1))[0];
+				} else {
+					$size2 = $content_length;
+				}
+			}
+			
+			$sth2 = mysqli_prepare($con,"UPDATE vitadb SET name=?,icon=?,version=?,author=?,url=?,type=?,description=?,data=?,date=?,titleid=?,long_description=?,screenshots=?,source=?,release_page=?,trailer=?,size=?,data_size=? WHERE id=?");
+			mysqli_stmt_bind_param($sth2, "sssssisssssssssssi", $name, $icon, $version, $author, $url, $type, $description, $url3, $day, $tid, $long_description, $sshot, $source, $release_page, $trailer, $size, $size2, $id);
 			mysqli_stmt_execute($sth2);
 			mysqli_stmt_close($sth2);
 			$sth3 = mysqli_prepare($con,"INSERT INTO vitadb_log(author,object,hb,date) VALUES(?,?,?,?)");
