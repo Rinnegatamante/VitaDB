@@ -27,11 +27,13 @@ app.controller('infoController',function ($scope, $rootScope, $http, $routeParam
 			sizes_idx++;
 		}
 		$scope.conf.size = $scope.conf.size.toFixed(2) + " " + sizes[sizes_idx]
-		while ($scope.conf.data_size > 1024) {
-			$scope.conf.data_size = $scope.conf.data_size / 1024;
-			data_sizes_idx++;
+		if ($scope.conf.data.length > 2) {
+			while ($scope.conf.data_size > 1024) {
+				$scope.conf.data_size = $scope.conf.data_size / 1024;
+				data_sizes_idx++;
+			}
+			$scope.conf.data_size = $scope.conf.data_size.toFixed(2) + " " + sizes[data_sizes_idx]
 		}
-		$scope.conf.data_size = $scope.conf.data_size.toFixed(2) + " " + sizes[data_sizes_idx]
 		if ($scope.conf.trailer) {
 			$scope.conf.youtube = $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + $scope.conf.trailer)
 		}
