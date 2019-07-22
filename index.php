@@ -134,6 +134,14 @@
 						PC Tools
 					</a>
 				</li>
+				<li role="presentation" class="divider"></li>
+				<li>
+					<a href="#/titleids">
+						<i class="fa fa-list" aria-hidden="true"></i> &nbsp;
+						Titles List
+					</a>
+				</li>
+				<li role="presentation" class="divider"></li>
 				<li>
 					<a href="#/api">
 						<i class="fa fa-desktop" aria-hidden="true"></i> &nbsp;
@@ -150,18 +158,6 @@
 					<a href="#/supporters">
 						<i class="fab fa-patreon" aria-hidden="true"></i> &nbsp;
 						Supporters
-					</a>
-				</li>
-				<li>
-					<a href="#/titleids">
-						<i class="fa fa-list" aria-hidden="true"></i> &nbsp;
-						Titles List
-					</a>
-				</li>
-				<li>
-					<a href="#/instructions">
-						<i class="fa fa-question" aria-hidden="true"></i> &nbsp;
-						How it works?
 					</a>
 				</li>
 				<li role="presentation" class="divider"></li>

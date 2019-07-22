@@ -17,7 +17,6 @@
 	</div>
 	<br>
 	<div class="row">
-		<iframe ng-if="(!user) || (user.role == 5)" scrolling="no" frameBorder="0" id="uploader" width="100%" height="100px" src="ads.html"></iframe>
 		<div class="col-md-4">
 			<input style="display:inline-block;vertical-align:middle;" type="text" ng-model="field" class="form-control" placeholder="Search..." required="true" />
 		</div>

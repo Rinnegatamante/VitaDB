@@ -105,9 +105,6 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
 		.when('/supporters', {
 			templateUrl: 'home/supporters.template.php'
 		})
-		.when('/instructions', {
-			templateUrl: 'home/instructions.template.php'
-		})
 		.when('/user/:uname', {
 			templateUrl: 'user/info.template.php'
 		})
@@ -116,6 +113,9 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
 		})
 		.when('/titleids', {
 			templateUrl: 'home/titleslist.template.php'
+		})
+		.when('/bounties', {
+			templateUrl: 'home/bounties.template.php'
 		})
 		$httpProvider.interceptors.push('HttpInterceptorMessage')
 }])
