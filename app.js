@@ -82,6 +82,9 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
 		.when('/submit3', {
 			templateUrl: 'submit/submit3.template.php'
 		})
+		.when('/submit4', {
+			templateUrl: 'submit/submit4.template.php'
+		})
 		.when('/plugins', {
 			templateUrl: 'home/home2.template.php',
 			reloadOnSearch: false

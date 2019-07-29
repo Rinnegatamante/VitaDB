@@ -12,7 +12,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>VitaDB BETA</title>
+		<title>VitaDB by Vita Nuova</title>
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 		<link href="templates/lumino/css/bootstrap.min.css" rel="stylesheet">
 		<link href="templates/lumino/css/datepicker3.css" rel="stylesheet">
@@ -51,13 +51,14 @@
 		<script src="home/info.controller.js"></script>
 		<script src="home/staff.controller.js"></script>
 		<script src="home/supporters.controller.js"></script>
-		<script src="home/instructions.controller.js"></script>
+		<script src="home/bounties.controller.js"></script>
 		<script src="login/login.controller.js"></script>
 		<script src="login/logout.controller.js"></script>
 		<script src="login/register.controller.js"></script>
 		<script src="submit/submit.controller.js"></script>
 		<script src="submit/submit2.controller.js"></script>
 		<script src="submit/submit3.controller.js"></script>
+		<script src="submit/submit4.controller.js"></script>
 		<script src="submit/edit.controller.js"></script>
 		<script src="user/info.controller.js"></script>
 		<script src="user/profile.controller.js"></script>
@@ -73,7 +74,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#/"><span>Vita</span>DB <span>BETA</span></a>
+					<a class="navbar-brand" href="#/"><span>Vita</span>DB</a>
 					<ul class="user-menu">
 						<li class="dropdown pull-right">
 							<a href="" class="dropdown-toggle" data-toggle="dropdown">
@@ -136,9 +137,21 @@
 				</li>
 				<li role="presentation" class="divider"></li>
 				<li>
+					<a href="#/bounties">
+						<i class="fa fa-credit-card" aria-hidden="true"></i> &nbsp;
+						Bounties Tracker
+					</a>
+				</li>
+				<li>
 					<a href="#/titleids">
 						<i class="fa fa-list" aria-hidden="true"></i> &nbsp;
 						Titles List
+					</a>
+				</li>
+				<li>
+					<a href="https://discord.gg/PyCaBx9">
+						<i class="fab fa-discord" aria-hidden="true"></i> &nbsp;
+						Discord Server
 					</a>
 				</li>
 				<li role="presentation" class="divider"></li>
@@ -177,6 +190,12 @@
 					<a href="#/submit3">
 						<i class="fa fa-plus" aria-hidden="true"></i> &nbsp;
 						Submit a new PC tool
+					</a>
+				</li>
+				<li ng-if="user  && user.role < 3">
+					<a href="#/submit4">
+						<i class="fa fa-plus" aria-hidden="true"></i> &nbsp;
+						Submit a new bounty
 					</a>
 				</li>
 				<li ng-if="user">
