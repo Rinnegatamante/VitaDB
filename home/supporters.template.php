@@ -6,7 +6,7 @@
 			<center><h4>This is the full list of Patreon supporters. Thank you all for your contributions!</h4></center>
 			<center><h6>If you want to support this project, <a href="https://www.patreon.com/Rinnegatamante">become a Patron!</a></h6></center>
 			<br>
-			<div class="fixed-table-container">
+			<div class="fixed-table-container col" style="overflow:auto;">
 				<table data-toggle="table" class="table table-hover">
 					<thead>
 						<tr>

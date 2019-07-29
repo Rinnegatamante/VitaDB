@@ -16,7 +16,7 @@
 						<div class="form-group">
 							<h4>Title IDs List: </h4>
 							<div class="row no-padding">
-								<div class="fixed-table-container">
+								<div class="fixed-table-container col" style="overflow:auto;">
 									<table data-toggle="table" class="table table-hover">
 										<thead>
 											<tr>
